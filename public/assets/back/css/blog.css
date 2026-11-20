@@ -1,0 +1,30 @@
+.blog-table tr, .blog-table td, .blog-table th, .blog-table tbody {
+  padding: 15px;
+}
+.blog-table thead tr, .blog-table thead td, .blog-table thead th {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+#addBlog label, #updateBlog label {
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+}
+#addBlog input, #addBlog select, #addBlog textarea, #updateBlog input, #updateBlog select, #updateBlog textarea {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 8px 15px;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+#addBlog .modal-content, #updateBlog .modal-content {
+  background: #f9f9f9;
+}
+
+.modal-backdrop.show {
+  opacity: 0.9;
+}
+
+#CtSpinner, #CtSpinner2 {
+  display: none;
+}/*# sourceMappingURL=blog.css.map */

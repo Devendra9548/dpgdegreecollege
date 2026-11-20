@@ -1,0 +1,119 @@
+$hcolor: #000
+$pcolor: #453d3d
+$brandcolor: #24748c
+$fontPoppins: "Poppins", sans-serif
+$fontKonkhmer: "Konkhmer Sleokchher", system-ui
+$fontAlexandria: "Alexandria", sans-serif
+
+h1,h2,h3,h4,h5,h6
+    font-family: $fontAlexandria
+    color: $hcolor
+    
+p,ul,li,span,a,i,strong,div,body
+    font-family: $fontPoppins
+    color: $pcolor
+
+
+.bg-blue
+    background: $brandcolor !important
+
+.bg-yellow
+    background: #f9f2eb !important
+
+a
+    color: $pcolor
+    text-decoration: none !important
+p
+    margin-bottom: 0px !important
+    font-size: 1rem !important
+
+
+.prev-arrow,.next-arrow
+    position: absolute
+    top: 50%
+    z-index: 999
+    font-size: 21px
+    background: transparent
+    color: #fff
+    border: 2px solid #fff
+    left: -1px
+    padding: 10px 20px
+
+.next-arrow
+    right: 0px
+    left: auto
+
+.prev-arrow:hover,.next-arrow:hover
+    background: #fff!important
+    color: #000!important
+    border-color: #fff!important
+
+.globalbtn
+    background: $brandcolor
+    font-family: $fontPoppins
+    font-weight: 500
+    color: #fff
+    padding: 15px 20px
+    border-radius: 10px
+    display: inline-block
+    font-size: 1rem
+    z-index: 2
+    &:hover
+        background: #000
+
+
+.slick-arrow
+    z-index: 9 !important
+    position: absolute !important
+    top: -50px !important
+    width: 37px !important
+    left: 0px !important
+    text-align: left !important
+
+.slick-next
+    left: 40px !important
+
+.slick-next:before, .slick-prev:before
+    font-size: 30px !important
+    opacity: 1 !important
+    color: #24748c !important
+
+.slick-list
+    padding: 0px !important
+
+.slick-dots li button:before
+    font-size: 12px !important
+    color: #24748c !important
+    margin-top: 15px
+
+
+@media only screen and (max-width:768px)
+    .slider__control-line
+        left: 15px
+        top: 50%
+        width: 3px
+
+    .slider__control
+        top: 50%
+        left: 10%
+        width: 44px
+        height: 44px
+    .slider__control--right
+        left: auto
+        right: 10px
+    .slider__control--right .slider__control-line
+        left: 28px
+
+
+@media only screen and (max-width:768px)
+    .globalbtn
+        font-size: 16px !important
+
+    .prev-arrow, .next-arrow
+        top: 46%
+        z-index: 999
+        font-size: 9px
+        background: transparent
+        color: #fff
+        border: 2px solid #b8b6b6
+        padding: 5px 5px

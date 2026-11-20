@@ -1,0 +1,17 @@
+.first-hero-section img {
+  height: auto !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.first-hero-section .slick-arrow {
+  z-index: 9 !important;
+  position: absolute !important;
+  top: 50% !important;
+  width: 37px !important;
+  left: 20px !important;
+  text-align: left !important;
+}
+.first-hero-section .slick-next {
+  right: 20px !important;
+  left: auto !important;
+}/*# sourceMappingURL=home.css.map */
