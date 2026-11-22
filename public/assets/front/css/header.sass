@@ -1,5 +1,166 @@
 @import 'style.sass'
 
-.container-fluid
-    width: 88% !important
+.dpg-topbar
+    background: $dpg-teal
+    color: $dpg-white
+    font-family: $fontHeading
+    font-size: 14px
+    letter-spacing: .3px
 
+    a
+        color: $dpg-white
+        text-decoration: none
+        &:hover
+            color: $dpg-yellow
+
+    .top-links
+        li + li::before
+            content: "|"
+            opacity: .45
+            margin: 0 .65rem
+
+    .social
+        a
+            width: 24px
+            height: 24px
+            border-radius: 50%
+            background: rgba($dpg-white, .14)
+            display: inline-grid
+            place-items: center
+            font-size: 12px
+            transition: .2s
+            &:hover
+                background: $dpg-yellow
+                color: $dpg-teal-dark
+
+// ---------- Main header ----------
+.dpg-header
+    background: $dpg-white
+    box-shadow: 0 2px 10px rgba($dpg-teal-dark, .10)
+    font-family: $fontHeading
+
+// Logo + divider + address
+.dpg-brand
+    img
+        height: 78px
+        width: auto
+
+    .divider
+        width: 2px
+        height: 58px
+        background: $dpg-teal-dark
+
+    .address
+        font-family: $fontHeading
+        font-weight: 700
+        color: $dpg-teal-dark
+        line-height: 1.05
+        font-size: 24px
+        letter-spacing: .4px
+
+        span
+            display: block
+
+        .l2
+            text-transform: uppercase
+
+// ---------- Nav ----------
+.navbar-expand-xl .navbar-nav .nav-link
+    padding-right: 0.8rem !important
+    padding-left: 0.8rem !important
+
+.dpg-nav
+    .nav-link
+        font-family: $fontHeading
+        color: $dpg-teal-dark
+        font-weight: 500
+        font-size: 18px
+        letter-spacing: .3px
+        padding: .5rem .7rem
+        position: relative
+        transition: color .2s
+
+        &:hover,
+        &.active
+            color: $dpg-teal
+
+    @media (min-width: $bp-xl)
+        .nav-item + .nav-item .nav-link::before
+            content: ""
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            width: 2px
+            height: 20px
+            background: #b9c9cb
+
+    // Quick Links (mobile menu ke andar, top bar ke links)
+    &__quick
+        border-top: 1px solid #eef2f2
+        margin-top: .5rem
+        padding: 1rem .5rem 1.25rem
+
+        &-title
+            font-family: $fontHeading
+            font-size: 13px
+            font-weight: 600
+            letter-spacing: .15em
+            text-transform: uppercase
+            color: $dpg-teal
+            margin-bottom: .75rem
+
+        a
+            display: block
+            padding: .45rem .75rem
+            border-radius: .5rem
+            background: rgba($dpg-teal-dark, .05)
+            font-family: $fontHeading
+            font-size: 15px
+            color: $dpg-teal-dark
+            transition: .2s
+            &:hover
+                background: $dpg-teal
+                color: $dpg-white
+
+// ---------- Buttons (base .btn-dpg style.sass me hai) ----------
+.dpg-header
+    .btn-dpg
+        background: $dpg-orange
+        color: $dpg-white
+        &:hover
+            background: $dpg-teal
+            color: $dpg-white
+
+    .btn-search
+        color: $dpg-teal-dark
+        font-size: 19px
+        &:hover
+            color: $dpg-teal
+
+// ---------- Responsive ----------
+@media (max-width: #{$bp-xxl - .02px})
+    .dpg-nav .nav-link
+        font-size: 17px
+        padding: .5rem .5rem
+
+    .dpg-brand
+        img
+            height: 66px
+        .address
+            font-size: 20px
+        .divider
+            height: 48px
+
+@media (max-width: #{$bp-sm - .02px})
+    .dpg-brand
+        img
+            height: 52px
+        .address
+            font-size: 15px
+        .divider
+            height: 38px
+
+    .dpg-header .btn-dpg
+        padding: .45rem .9rem
+        font-size: 13px

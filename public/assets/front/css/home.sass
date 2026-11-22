@@ -1,9 +1,4 @@
-$hcolor: #000
-$pcolor: #453d3d
-$brandcolor: #24748c
-$fontPoppins: "Poppins", sans-serif
-$fontKonkhmer: "Konkhmer Sleokchher", system-ui
-$fontAlexandria: "Alexandria", sans-serif
+@import 'style.sass'
 
 .first-hero-section
     img
@@ -21,3 +16,1820 @@ $fontAlexandria: "Alexandria", sans-serif
         right: 20px !important
         left: auto!important
 
+
+$marquee-speed: 35s   
+
+@keyframes dpg-marquee
+    from
+        transform: translateX(0)
+    to
+        transform: translateX(-50%)   // 2 same groups hain, isliye 50%
+
+.dpg-marquee
+    font-family: $fontHeading
+
+    &__bar
+        background: $dpg-teal
+        overflow: hidden
+
+    &__track
+        width: max-content
+        white-space: nowrap
+        animation: dpg-marquee $marquee-speed linear infinite
+
+        // mouse le jaane par ruk jaye
+        .dpg-marquee__bar:hover &
+            animation-play-state: paused
+
+    &__item
+        border: 1px solid rgba($dpg-white, .10)
+        background: rgba($dpg-white, .06)
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .15)
+
+    &__tag
+        background: $dpg-yellow
+        color: $dpg-teal-dark
+        font-size: .625rem
+        font-weight: 700
+        text-transform: uppercase
+        letter-spacing: .15em
+
+    &__title
+        color: $dpg-white
+        font-size: 1.25rem
+        font-weight: 700
+
+    &__star
+        color: $dpg-yellow
+        font-size: 1rem
+
+    &__text
+        color: rgba($dpg-white, .80)
+        font-size: .875rem
+        font-weight: 500
+
+    &__link
+        border: 1px solid $dpg-yellow
+        color: $dpg-yellow
+        font-size: .75rem
+        font-weight: 600
+        letter-spacing: .3px
+        text-decoration: none
+        transition: .2s
+        &:hover
+            background: $dpg-yellow
+            color: $dpg-teal-dark
+
+    &__divider
+        width: 1px
+        height: 40px
+        margin: 0 .75rem
+        background: rgba($dpg-yellow, .40)
+        flex-shrink: 0
+
+
+@media (max-width: #{$bp-sm - .02px})
+    .dpg-marquee__title
+        font-size: 1rem
+
+
+@media (prefers-reduced-motion: reduce)
+    .dpg-marquee__bar
+        overflow-x: auto
+    .dpg-marquee__track
+        animation: none
+
+
+.dpg-stats
+    padding: 3rem 0
+    background: $dpg-white
+    font-family: $fontHeading
+
+    &__grid
+        display: grid
+        gap: 20px
+        grid-template-columns: repeat(5, 1fr)
+        grid-auto-rows: 200px
+        grid-template-areas: "a b c c d" "a e e f f"
+
+    &__tile
+        position: relative
+        overflow: hidden
+        border-radius: 1rem
+        background-color: $dpg-teal
+        box-shadow: 0 8px 22px rgba($dpg-teal, .12)
+        isolation: isolate
+
+        &::before
+            content: ""
+            position: absolute
+            inset: 0
+            z-index: -2
+            background-image: var(--bg)
+            background-size: cover
+            background-position: center
+            transition: transform .6s ease
+
+        &::after
+            content: ""
+            position: absolute
+            inset: 0
+            z-index: -1
+            background: linear-gradient(135deg, rgb(7 60 68) 0%, #11756959 55%, rgba(255, 255, 255, 0.25) 100%)
+
+        &:hover::before
+            transform: scale(1.06)
+
+        // image na ho to ye brand colours dikhenge
+        &--a
+            grid-area: a
+            background-color: $dpg-teal
+        &--b
+            grid-area: b
+            background-color: $dpg-teal-dark
+        &--c
+            grid-area: c
+            background-color: $dpg-teal-dark
+        &--d
+            grid-area: d
+            background-color: $dpg-teal
+        &--e
+            grid-area: e
+            background-color: $dpg-teal
+        &--f
+            grid-area: f
+            background-color: $dpg-teal-dark
+
+    &__content
+        padding: 1.25rem 1.5rem
+
+    &__num
+        font-family: $fontHeading
+        font-weight: 700
+        font-size: clamp(2rem, 3.2vw, 3.2rem)
+        line-height: 1
+        color: $dpg-white
+
+        .plus
+            color: $dpg-yellow
+
+    &__label
+        margin-top: .35rem
+        font-family: $fontHeading
+        font-size: 1.1rem
+        font-weight: 400
+        letter-spacing: .3px
+        color: rgba($dpg-white, .92)
+
+
+@media (max-width: #{$bp-lg - .02px})
+    .dpg-stats
+        padding: 2rem 0
+
+        &__grid
+            gap: 14px
+            grid-template-columns: repeat(2, 1fr)
+            grid-auto-rows: 170px
+            grid-template-areas: "a a" "b d" "c c" "e e" "f f"
+
+        &__content
+            padding: 1rem 1.15rem
+
+@media (max-width: #{$bp-sm - .02px})
+    .dpg-stats
+        &__grid
+            gap: 12px
+            grid-auto-rows: 140px
+
+        &__label
+            font-size: .95rem
+
+// Jinhe animation pasand nahi: hover zoom band
+@media (prefers-reduced-motion: reduce)
+    .dpg-stats__tile::before
+        transition: none
+    .dpg-stats__tile:hover::before
+        transform: none
+
+
+
+// ================================================================
+// NEW SECTIONS  →  home.sass ke sabse neeche paste karo.
+// (pichla home_append.sass poora hata kar ye paste karna)
+// Existing code me kuch change nahi. style.sass bhi untouched.
+// ================================================================
+
+$dpg-ink: rgba($dpg-teal-dark, .72)
+$dpg-soft: #F3F8F7
+$dpg-tint: #E2F0ED
+$dpg-line: rgba($dpg-teal-dark, .10)
+$dpg-shadow: 0 10px 30px rgba($dpg-teal-dark, .08)
+$dpg-strip-speed: 40s
+
+@keyframes dpg-strip
+    from
+        transform: translateX(0)
+    to
+        transform: translateX(-50%)
+
+@keyframes dpg-pulse
+    0%
+        box-shadow: 0 0 0 0 rgba($dpg-yellow, .55)
+    70%
+        box-shadow: 0 0 0 26px rgba($dpg-yellow, 0)
+    100%
+        box-shadow: 0 0 0 0 rgba($dpg-yellow, 0)
+
+
+// ================= SHARED =================
+.dpg-i
+    width: 1em
+    height: 1em
+    fill: none
+    stroke: currentColor
+    stroke-width: 2
+    stroke-linecap: round
+    stroke-linejoin: round
+    flex-shrink: 0
+    vertical-align: -.125em
+
+.dpg-sec
+    padding: 5rem 0
+    font-family: $fontHeading
+    background: $dpg-white
+    &--soft
+        background: $dpg-soft
+    &--blue
+        background: $dpg-tint
+
+.dpg-head
+    max-width: 720px
+    margin: 0 auto 3rem
+    text-align: center
+
+    &__eyebrow
+        display: inline-flex
+        align-items: center
+        gap: .6rem
+        font-size: .8rem
+        font-weight: 600
+        letter-spacing: .2em
+        text-transform: uppercase
+        color: $dpg-teal
+        &::before,
+        &::after
+            content: ""
+            width: 28px
+            height: 2px
+            background: $dpg-yellow
+        &--left::after
+            display: none
+        &--gold
+            color: $dpg-yellow
+
+    &__title
+        margin: .6rem 0 .8rem
+        font-size: clamp(1.9rem, 3.4vw, 2.8rem)
+        font-weight: 600
+        color: $dpg-teal-dark
+        &--serif
+            font-family: $fontBaskerville
+            font-weight: 700
+            font-size: clamp(1.6rem, 3vw, 2.4rem)
+        &--gold
+            color: $dpg-yellow
+            font-family: $fontBaskerville
+        span
+            color: $dpg-yellow
+
+    &__sub
+        font-family: $fontBody
+        color: $dpg-ink
+
+    &--left
+        margin: 0 0 2.25rem
+        text-align: left
+
+    &--light
+        .dpg-head__eyebrow
+            color: $dpg-yellow
+        .dpg-head__title
+            color: $dpg-white
+        .dpg-head__sub
+            color: rgba($dpg-white, .8)
+
+// SGT style heading: peeli vertical bar + title
+.dpg-bar-title
+    margin-bottom: 1.25rem
+    padding-left: .8rem
+    border-left: 4px solid $dpg-yellow
+    font-family: $fontBaskerville
+    font-size: 1.6rem
+    font-weight: 700
+    line-height: 1.1
+    color: $dpg-teal-dark
+    span
+        color: $dpg-teal
+
+.btn-dpg-ghost
+    display: inline-flex
+    align-items: center
+    gap: .5rem
+    font-family: $fontHeading
+    font-weight: 600
+    letter-spacing: .6px
+    text-transform: uppercase
+    color: $dpg-white
+    border: 2px solid rgba($dpg-white, .5)
+    border-radius: 50rem
+    padding: .55rem 1.5rem
+    transition: .2s
+    &:hover
+        background: $dpg-white
+        color: $dpg-teal-dark
+        border-color: $dpg-white
+
+.dpg-btn-sm
+    display: inline-block
+    padding: .55rem 1.4rem
+    border: 1px solid $dpg-teal-dark
+    border-radius: .4rem
+    background: $dpg-teal-dark
+    color: $dpg-white
+    font-size: .95rem
+    transition: .2s
+    &:hover
+        background: $dpg-teal
+        border-color: $dpg-teal
+        color: $dpg-white
+    &--line
+        background: transparent
+        color: $dpg-teal-dark
+        &:hover
+            background: $dpg-teal-dark
+            border-color: $dpg-teal-dark
+
+.dpg-round
+    display: grid
+    place-items: center
+    width: 38px
+    height: 38px
+    border: 1px solid $dpg-teal-dark
+    border-radius: 50%
+    background: transparent
+    color: $dpg-teal-dark
+    font-size: 1.1rem
+    transition: .2s
+    &:hover
+        background: $dpg-teal-dark
+        color: $dpg-white
+
+// image na ho to naam ka pehla akshar dikhta hai
+.dpg-avatar
+    position: relative
+    display: grid
+    place-items: center
+    width: 100%
+    height: 100%
+    overflow: hidden
+    background: linear-gradient(160deg, $dpg-teal, $dpg-teal-dark)
+    color: rgba($dpg-white, .9)
+    font-size: 3rem
+    font-weight: 600
+    &::before
+        content: attr(data-i)
+    img
+        position: absolute
+        inset: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+// fade slider (career photos, happenings, schools)
+.dpg-fade
+    position: relative
+    &__slides
+        display: grid
+    &__slide
+        grid-area: 1 / 1
+        opacity: 0
+        visibility: hidden
+        transition: opacity .6s ease, visibility .6s
+        &.is-active
+            opacity: 1
+            visibility: visible
+    &__dots
+        display: flex
+        justify-content: center
+        gap: .4rem
+        margin-top: 1rem
+        &--over
+            position: absolute
+            left: 0
+            right: 0
+            bottom: 1rem
+            margin: 0
+            z-index: 3
+    &__dot
+        width: 9px
+        height: 9px
+        padding: 0
+        border: 0
+        border-radius: 9px
+        background: rgba($dpg-white, .55)
+        transition: .3s
+        &.is-active
+            width: 26px
+            background: $dpg-yellow
+    &__nav
+        position: absolute
+        right: 0
+        bottom: 0
+        display: flex
+        gap: .5rem
+
+// scroll-snap slider (slick use nahi hota → existing slick CSS se takrav nahi)
+.dpg-slider
+    position: relative
+    &__track
+        display: flex
+        gap: 20px
+        padding: .5rem .25rem 1.5rem
+        overflow-x: auto
+        scroll-snap-type: x mandatory
+        scroll-behavior: smooth
+        scrollbar-width: none
+        &::-webkit-scrollbar
+            display: none
+    &__item
+        flex: 0 0 calc((100% - 60px) / 4)
+        min-width: 230px
+        scroll-snap-align: start
+    &__nav
+        display: flex
+        justify-content: center
+        gap: .7rem
+    &__btn
+        display: grid
+        place-items: center
+        width: 46px
+        height: 46px
+        border: 2px solid $dpg-teal-dark
+        border-radius: 50%
+        background: transparent
+        color: $dpg-teal-dark
+        font-size: 1.2rem
+        transition: .2s
+        &:hover
+            background: $dpg-teal-dark
+            color: $dpg-white
+
+// video thumbnail → click par iframe
+.dpg-vid
+    position: relative
+    aspect-ratio: 16 / 10
+    overflow: hidden
+    border-radius: 1rem
+    background: $dpg-teal-dark
+    box-shadow: 0 14px 34px rgba(0, 0, 0, .25)
+    > img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        transition: transform .6s ease
+    &:hover > img
+        transform: scale(1.04)
+    iframe
+        position: absolute
+        inset: 0
+        width: 100%
+        height: 100%
+        border: 0
+    &--tour
+        aspect-ratio: 16 / 9
+        border: 1px solid rgba($dpg-white, .18)
+        border-radius: 1.25rem
+        box-shadow: 0 30px 60px rgba(0, 0, 0, .35)
+    &__shade
+        position: absolute
+        inset: 0
+        background: linear-gradient(180deg, rgba($dpg-teal-dark, .1), rgba($dpg-teal-dark, .5))
+        pointer-events: none
+    &__badge
+        position: absolute
+        top: 1rem
+        left: 1rem
+        padding: .35rem .9rem
+        border-radius: 50rem
+        background: $dpg-yellow
+        color: $dpg-teal-dark
+        font-size: .75rem
+        font-weight: 700
+        letter-spacing: .15em
+    &__play
+        position: absolute
+        top: 50%
+        left: 50%
+        display: grid
+        place-items: center
+        width: 88px
+        height: 88px
+        margin: -44px 0 0 -44px
+        border: 0
+        border-radius: 50%
+        background: $dpg-yellow
+        color: $dpg-teal-dark
+        font-size: 2rem
+        animation: dpg-pulse 2.2s infinite
+        transition: transform .25s
+        .dpg-i
+            fill: currentColor
+            margin-left: 4px
+        &:hover
+            transform: scale(1.08)
+        &--sm
+            width: 60px
+            height: 60px
+            margin: -30px 0 0 -30px
+            font-size: 1.4rem
+
+
+// ================= 1. ABOUT =================
+.dpg-about
+    &__grid
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 4rem
+        align-items: center
+    &__media
+        position: relative
+        padding: 0 0 2rem 2rem
+        isolation: isolate
+        &::before
+            content: ""
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 70%
+            height: 70%
+            border: 2px solid $dpg-yellow
+            border-radius: 1.25rem
+            z-index: -1
+        img
+            display: block
+            width: 100%
+            aspect-ratio: 4 / 3
+            object-fit: cover
+            border-radius: 1.25rem
+            box-shadow: 0 20px 45px rgba($dpg-teal-dark, .18)
+    &__badge
+        position: absolute
+        right: -.5rem
+        bottom: 0
+        padding: .8rem 1.3rem
+        border-radius: 1rem
+        background: $dpg-teal-dark
+        color: $dpg-white
+        box-shadow: $dpg-shadow
+        strong
+            color: $dpg-yellow
+            font-weight: 700
+    &__title
+        margin: .6rem 0 1rem
+        font-size: clamp(1.9rem, 3.2vw, 2.6rem)
+        color: $dpg-teal-dark
+    &__text
+        font-family: $fontBody
+        line-height: 1.85
+        color: $dpg-ink
+    &__pills
+        display: flex
+        flex-wrap: wrap
+        gap: .6rem
+        margin-top: 1.25rem
+        span
+            padding: .35rem 1rem
+            border: 1px solid $dpg-line
+            border-radius: 50rem
+            background: $dpg-soft
+            font-size: .85rem
+            font-weight: 500
+            color: $dpg-teal-dark
+
+
+// ================= 2. COVERFLOW =================
+.dpg-flow
+    background: linear-gradient(180deg, $dpg-teal-dark 0%, #0A4B52 100%)
+    overflow: hidden
+    &__wrap
+        position: relative
+    &__stage
+        position: relative
+        height: 460px
+        perspective: 1600px
+        overflow: hidden
+    &__item
+        position: absolute
+        top: 50%
+        left: 50%
+        width: 300px
+        height: 410px
+        margin: -205px 0 0 -150px
+        overflow: hidden
+        border-radius: 1rem
+        cursor: pointer
+        filter: grayscale(1) brightness(.75)
+        box-shadow: 0 20px 40px rgba(0, 0, 0, .35)
+        transition: transform .7s cubic-bezier(.2, .7, .2, 1), opacity .7s, filter .7s
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+        &.is-active
+            filter: none
+            cursor: default
+    &__cap
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        padding: 3rem 1rem 1rem
+        background: linear-gradient(transparent, rgba(0, 0, 0, .85))
+        color: $dpg-white
+        font-size: 1.1rem
+        font-weight: 600
+        opacity: 0
+        transition: opacity .4s
+        .dpg-flow__item.is-active &
+            opacity: 1
+    &__arrow
+        position: absolute
+        top: 50%
+        z-index: 20
+        transform: translateY(-50%)
+        border: 0
+        background: transparent
+        color: $dpg-white
+        font-size: 2.4rem
+        opacity: .85
+        &:hover
+            color: $dpg-yellow
+        &--prev
+            left: 0
+        &--next
+            right: 0
+
+
+// ================= 3. PLACEMENT =================
+.dpg-career
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+    gap: 18px
+    margin-bottom: 2rem
+    &__card
+        padding: 1.6rem 1.2rem
+        border-radius: 1rem
+        text-align: center
+        color: $dpg-white
+        background: linear-gradient(145deg, $dpg-teal-dark, $dpg-teal)
+        box-shadow: 0 14px 30px rgba($dpg-teal-dark, .2)
+        transition: transform .3s
+        &:nth-child(even)
+            background: linear-gradient(145deg, $dpg-teal, $dpg-teal-dark)
+        &:hover
+            transform: translateY(-5px)
+    &__icon
+        display: inline-grid
+        place-items: center
+        width: 46px
+        height: 46px
+        margin-bottom: .9rem
+        border-radius: 50%
+        background: rgba($dpg-yellow, .18)
+        color: $dpg-yellow
+        font-size: 1.4rem
+    &__num
+        font-size: clamp(1.6rem, 2.4vw, 2.2rem)
+        font-weight: 700
+        line-height: 1.1
+        color: $dpg-yellow
+    &__label
+        margin-top: .4rem
+        font-size: .9rem
+        color: rgba($dpg-white, .9)
+
+.dpg-place
+    &__top
+        display: grid
+        grid-template-columns: 1fr 2.4fr
+        gap: 20px
+        margin-bottom: 1.5rem
+    &__tile
+        position: relative
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        gap: .7rem
+        min-height: 260px
+        padding: 1.5rem
+        overflow: hidden
+        border-radius: .9rem
+        background: $dpg-teal-dark var(--bg) center / cover no-repeat
+        isolation: isolate
+        &::before
+            content: ""
+            position: absolute
+            inset: 0
+            z-index: -1
+            background: linear-gradient(180deg, rgba($dpg-teal-dark, .1), rgba($dpg-teal-dark, .9))
+        h3
+            margin: 0
+            font-family: $fontBaskerville
+            font-size: 1.5rem
+            color: $dpg-white
+    &__know
+        display: inline-flex
+        align-items: center
+        gap: .6rem
+        color: $dpg-white
+        font-size: .95rem
+        font-weight: 500
+        i
+            display: grid
+            place-items: center
+            width: 30px
+            height: 30px
+            border-radius: 50%
+            background: $dpg-yellow
+            color: $dpg-teal-dark
+            font-style: normal
+            transition: transform .25s
+        &:hover
+            color: $dpg-yellow
+            i
+                transform: translateX(4px)
+    &__photos
+        overflow: hidden
+        border-radius: .9rem
+        img
+            display: block
+            width: 100%
+            height: 100%
+            min-height: 260px
+            max-height: 300px
+            object-fit: cover
+
+.dpg-strip
+    overflow: hidden
+    padding: 1rem 0
+    border-radius: .9rem
+    background: $dpg-white
+    box-shadow: $dpg-shadow
+    &__track
+        display: flex
+        width: max-content
+        animation: dpg-strip $dpg-strip-speed linear infinite
+        .dpg-strip:hover &
+            animation-play-state: paused
+    &__group
+        display: flex
+        flex-shrink: 0
+    &__logo
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 200px
+        height: 64px
+        padding: 0 1.5rem
+        border-right: 1px solid $dpg-line
+        font-size: 1.15rem
+        font-weight: 600
+        color: $dpg-teal-dark
+        white-space: nowrap
+        img
+            max-width: 100%
+            max-height: 100%
+            object-fit: contain
+
+
+// ================= 4. SUCCESS STORIES =================
+.dpg-tabs
+    &__nav
+        display: flex
+        flex-wrap: wrap
+        gap: .6rem
+        margin-bottom: 1.5rem
+    &__btn
+        padding: .5rem 1.3rem
+        border: 1px solid $dpg-line
+        border-radius: 50rem
+        background: $dpg-soft
+        font-size: .95rem
+        font-weight: 500
+        color: $dpg-teal-dark
+        transition: .2s
+        &.is-active,
+        &:hover
+            background: $dpg-teal-dark
+            border-color: $dpg-teal-dark
+            color: $dpg-white
+    &__panel
+        display: none
+        &.is-active
+            display: block
+
+.dpg-acard
+    overflow: hidden
+    background: $dpg-white
+    border: 1px solid $dpg-line
+    border-radius: 1rem
+    box-shadow: $dpg-shadow
+    transition: transform .3s
+    &:hover
+        transform: translateY(-5px)
+    &__img
+        aspect-ratio: 4 / 4.4
+        overflow: hidden
+    &__body
+        padding: 1rem 1.2rem 1.3rem
+    &__name
+        margin: 0
+        font-size: 1.1rem
+        color: $dpg-teal-dark
+    &__meta
+        font-size: .82rem
+        color: $dpg-ink
+    &__hl
+        margin-top: .6rem
+        font-size: 1.35rem
+        font-weight: 700
+        color: $dpg-teal
+    &__org
+        margin-top: .2rem
+        padding-top: .5rem
+        border-top: 1px solid $dpg-line
+        font-size: .9rem
+        font-weight: 600
+        color: $dpg-teal-dark
+
+
+// ================= 5. HAPPENINGS + PRESS =================
+.dpg-happen
+    &__grid
+        display: grid
+        grid-template-columns: 1.9fr 1fr
+        gap: 3rem
+    &__img
+        display: block
+        width: 100%
+        aspect-ratio: 16 / 7.5
+        object-fit: cover
+        border: 1px solid $dpg-line
+        border-radius: .6rem
+    &__title
+        margin: 1.1rem 0 .4rem
+        font-family: $fontBody
+        font-size: 1.1rem
+        font-weight: 700
+        line-height: 1.5
+        color: $dpg-teal-dark
+    &__text
+        font-size: .92rem
+        line-height: 1.7
+        color: $dpg-ink
+    &__btns
+        display: flex
+        gap: .7rem
+        margin-top: 1.2rem
+        padding-bottom: .2rem
+
+.dpg-press
+    margin-bottom: 1.25rem
+    li
+        margin-bottom: .9rem
+    a
+        display: flex
+        align-items: center
+        gap: 1rem
+        padding: .5rem
+        border-radius: .8rem
+        background: rgba($dpg-white, .55)
+        transition: .2s
+        &:hover
+            background: $dpg-white
+            box-shadow: $dpg-shadow
+    &__logo
+        display: grid
+        place-items: center
+        flex: 0 0 96px
+        height: 66px
+        padding: .3rem
+        border-radius: .6rem
+        background: $dpg-white
+        font-size: .72rem
+        font-weight: 600
+        text-align: center
+        line-height: 1.2
+        color: $dpg-teal
+    &__text
+        font-size: .88rem
+        line-height: 1.5
+        color: $dpg-teal-dark
+
+
+// ================= 6. CAMPUS BUZZ =================
+.dpg-buzz
+    &__grid
+        display: grid
+        grid-template-columns: 2fr 1fr 1fr
+        grid-template-areas: "a b c" "a d e"
+        grid-auto-rows: 220px
+        gap: 14px
+        > a:not(.dpg-buzz__card)
+            display: block
+            border-radius: .8rem
+            background: $dpg-teal var(--bg) center / cover no-repeat
+            transition: transform .3s, filter .3s
+            &:hover
+                transform: scale(1.015)
+                filter: brightness(1.08)
+    &__a
+        grid-area: a
+    &__c
+        grid-area: c
+    &__d
+        grid-area: d
+    &__e
+        grid-area: e
+    &__card
+        grid-area: b
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        padding: 1.5rem
+        border-radius: .8rem
+        background: linear-gradient(145deg, $dpg-teal-dark, $dpg-teal)
+        h2
+            margin: 0
+            font-family: $fontBaskerville
+            font-size: 2rem
+            color: $dpg-white
+
+
+// ================= 7. 360 TOUR =================
+.dpg-tour
+    position: relative
+    overflow: hidden
+    background: linear-gradient(135deg, $dpg-teal-dark 0%, #0A4B52 60%, $dpg-teal 150%)
+    &::before
+        content: ""
+        position: absolute
+        top: -160px
+        right: -160px
+        width: 520px
+        height: 520px
+        border-radius: 50%
+        background: radial-gradient(circle, rgba($dpg-yellow, .18), transparent 65%)
+        pointer-events: none
+    &__grid
+        display: grid
+        grid-template-columns: 1fr 1.4fr
+        gap: 3.5rem
+        align-items: center
+    &__text
+        font-family: $fontBody
+        line-height: 1.85
+        color: rgba($dpg-white, .82)
+    &__chips
+        display: flex
+        flex-wrap: wrap
+        gap: .6rem
+        margin-top: 1.5rem
+        li
+            padding: .45rem 1rem
+            border: 1px solid rgba($dpg-white, .22)
+            border-radius: 50rem
+            background: rgba($dpg-white, .06)
+            font-size: .9rem
+            color: $dpg-white
+
+
+// ================= 8. SCHOOLS + EVENTS =================
+.dpg-schools
+    &__grid
+        display: grid
+        grid-template-columns: 1.7fr 1fr
+        gap: 24px
+    &__card
+        overflow: hidden
+        border-radius: 1.1rem
+        box-shadow: $dpg-shadow
+    &__slide
+        position: relative
+        display: flex
+        align-items: flex-end
+        min-height: 380px
+        padding: 2.2rem
+        background: $dpg-teal-dark var(--bg) center / cover no-repeat
+        isolation: isolate
+        &::before
+            content: ""
+            position: absolute
+            inset: 0
+            z-index: -1
+            background: linear-gradient(180deg, rgba($dpg-teal-dark, .05) 0%, rgba($dpg-teal-dark, .92) 100%)
+        h3
+            margin: 0 0 .5rem
+            font-size: 1.9rem
+            color: $dpg-white
+        p
+            max-width: 440px
+            margin-bottom: 1rem
+            color: rgba($dpg-white, .85)
+            font-size: .95rem
+
+.dpg-events
+    padding: 1.6rem
+    border: 1px solid $dpg-line
+    border-radius: 1.1rem
+    background: $dpg-white
+    box-shadow: $dpg-shadow
+    h3
+        margin-bottom: 1rem
+        padding-bottom: .8rem
+        border-bottom: 1px solid $dpg-line
+        font-size: 1.3rem
+        color: $dpg-teal-dark
+    li
+        display: flex
+        align-items: center
+        gap: 1rem
+        padding: .75rem 0
+        border-bottom: 1px dashed $dpg-line
+        &:last-child
+            border-bottom: 0
+        strong
+            display: block
+            font-weight: 500
+            color: $dpg-teal-dark
+        em
+            font-size: .82rem
+            font-style: normal
+            color: $dpg-ink
+    &__date
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        flex: 0 0 62px
+        height: 62px
+        border-radius: .7rem
+        background: $dpg-teal-dark
+        color: $dpg-yellow
+        font-size: .75rem
+        font-weight: 600
+        letter-spacing: .1em
+        b
+            font-size: 1.4rem
+            line-height: 1
+            color: $dpg-white
+
+
+// ================= 9. RESEARCH =================
+.dpg-research
+    &__grid
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        gap: 20px
+    &__card
+        padding: 1.8rem 1.4rem
+        border: 1px solid $dpg-line
+        border-radius: 1.1rem
+        background: $dpg-white
+        text-align: center
+        box-shadow: $dpg-shadow
+        transition: transform .3s
+        &:hover
+            transform: translateY(-5px)
+        p
+            margin-top: .4rem
+            font-size: .95rem
+            color: $dpg-ink
+    &__icon
+        display: inline-grid
+        place-items: center
+        width: 52px
+        height: 52px
+        margin-bottom: .9rem
+        border-radius: 50%
+        background: $dpg-tint
+        color: $dpg-teal
+        font-size: 1.5rem
+    &__num
+        font-size: clamp(1.8rem, 2.6vw, 2.5rem)
+        font-weight: 700
+        line-height: 1
+        color: $dpg-teal-dark
+
+
+// ================= 10. PERSONALITIES =================
+.dpg-people
+    background: linear-gradient(180deg, #0A4B52, $dpg-teal-dark)
+    &__grid
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        gap: 2.5rem 2rem
+        max-width: 1000px
+        margin: 0 auto
+    &__card
+        overflow: hidden
+        border-radius: .6rem
+        background: linear-gradient(180deg, #0F6A72, $dpg-teal-dark)
+        box-shadow: 0 14px 30px rgba(0, 0, 0, .3)
+        transition: transform .3s
+        &:hover
+            transform: translateY(-6px)
+    &__img
+        aspect-ratio: 1 / .85
+        overflow: hidden
+        .dpg-avatar
+            background: transparent
+            font-size: 4rem
+            color: rgba($dpg-white, .35)
+    &__info
+        padding: .9rem 1.1rem 1.1rem
+        background: linear-gradient(180deg, rgba(0, 0, 0, .15), rgba(0, 0, 0, .55))
+        h4
+            margin: 0
+            font-size: 1.05rem
+            color: $dpg-white
+        span
+            font-size: .72rem
+            letter-spacing: .06em
+            text-transform: uppercase
+            color: rgba($dpg-white, .78)
+
+
+// ================= 11. STAR ALUMNI =================
+.dpg-star
+    &__grid
+        display: grid
+        grid-template-columns: 230px 1fr
+        gap: 2.5rem
+        align-items: end
+    &__photo
+        aspect-ratio: 3 / 4
+        overflow: hidden
+        border: 1px solid $dpg-line
+        border-radius: 1rem
+        box-shadow: $dpg-shadow
+    &__quote
+        position: relative
+        padding: 2.4rem 3rem 2.2rem
+        overflow: hidden
+        border-radius: .9rem
+        color: $dpg-white
+        background: linear-gradient(135deg, $dpg-teal-dark 0%, $dpg-teal 100%)
+        box-shadow: 0 24px 50px rgba($dpg-teal-dark, .22)
+        &::before,
+        &::after
+            position: absolute
+            font-family: $fontBaskerville
+            font-size: 5.5rem
+            line-height: 1
+            color: rgba($dpg-white, .85)
+        &::before
+            content: "\201C"
+            top: .6rem
+            left: 1rem
+        &::after
+            content: "\201D"
+            right: 1.2rem
+            bottom: -1.6rem
+        p
+            font-family: $fontBody
+            font-size: 1.02rem
+            line-height: 1.85
+            color: $dpg-white
+        h3
+            margin: 1.2rem 0 .2rem
+            font-size: 1.3rem
+            color: $dpg-yellow
+        span
+            display: block
+            font-size: .92rem
+            color: $dpg-yellow
+
+
+// ================= 12. EXPERT VOICES =================
+.dpg-voices
+    background: linear-gradient(135deg, $dpg-teal-dark, #0A4B52)
+    &__grid
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        gap: 28px
+        text-align: center
+        h4
+            margin: 1rem 0 .15rem
+            font-size: 1.1rem
+            color: $dpg-white
+        p
+            font-size: .85rem
+            color: rgba($dpg-white, .78)
+
+
+// ================= 13. TESTIMONIALS =================
+.dpg-testi
+    &__grid
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        gap: 24px
+        padding-top: 44px
+    &__card
+        position: relative
+        padding: 3.5rem 1.75rem 1.9rem
+        border: 1px solid $dpg-line
+        border-radius: 1.25rem
+        background: $dpg-white
+        text-align: center
+        box-shadow: $dpg-shadow
+        transition: transform .3s
+        &:hover
+            transform: translateY(-5px)
+    &__avatar
+        position: absolute
+        top: -44px
+        left: 50%
+        width: 88px
+        height: 88px
+        margin-left: -44px
+        overflow: hidden
+        border: 4px solid $dpg-white
+        border-radius: 50%
+        box-shadow: 0 6px 18px rgba($dpg-teal-dark, .18)
+        .dpg-avatar
+            font-size: 2rem
+    &__name
+        margin: 0
+        font-size: 1.2rem
+        color: $dpg-teal-dark
+    &__course
+        margin-bottom: 1rem
+        font-size: .9rem
+        font-weight: 500
+        color: $dpg-teal
+    &__text
+        font-family: $fontBody
+        font-size: .95rem
+        line-height: 1.8
+        color: $dpg-ink
+
+
+// ================= 14. COLLABORATIONS =================
+.dpg-collab
+    &__card
+        position: relative
+        display: flex
+        align-items: flex-end
+        height: 250px
+        padding: 1rem
+        overflow: hidden
+        border-radius: .8rem
+        background: $dpg-teal var(--bg) center / cover no-repeat
+        isolation: isolate
+        &::before
+            content: ""
+            position: absolute
+            inset: 0
+            z-index: -1
+            background: linear-gradient(180deg, transparent 40%, rgba($dpg-teal-dark, .92))
+        span
+            font-size: 1rem
+            font-weight: 500
+            color: $dpg-white
+
+
+// ================= 15. ECOSYSTEM =================
+.dpg-eco
+    background: linear-gradient(135deg, $dpg-teal-dark, #0A4B52)
+    &__grid
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        gap: 22px
+    &__card
+        position: relative
+        display: flex
+        align-items: flex-end
+        min-height: 400px
+        padding: 1.8rem
+        overflow: hidden
+        border-radius: 1rem
+        background: $dpg-teal var(--bg) center / cover no-repeat
+        isolation: isolate
+        transition: transform .3s
+        &::before
+            content: ""
+            position: absolute
+            inset: 0
+            z-index: -1
+            background: linear-gradient(180deg, rgba($dpg-teal-dark, 0) 30%, rgba($dpg-teal-dark, .95))
+        &:hover
+            transform: translateY(-6px)
+        h3
+            margin: 0 0 .4rem
+            font-size: 1.5rem
+            color: $dpg-yellow
+        p
+            font-size: .92rem
+            color: rgba($dpg-white, .88)
+
+
+// ================= 16. BLOG =================
+.dpg-blog
+    &__grid
+        display: grid
+        grid-template-columns: 1.5fr 1fr
+        gap: 28px
+    &__feat
+        display: block
+        overflow: hidden
+        border: 1px solid $dpg-line
+        border-radius: 1rem
+        background: $dpg-white
+        box-shadow: $dpg-shadow
+        img
+            display: block
+            width: 100%
+            aspect-ratio: 16 / 8
+            object-fit: cover
+        > div
+            padding: 1.5rem
+        h3
+            margin: .7rem 0 .5rem
+            font-size: 1.4rem
+            line-height: 1.3
+            color: $dpg-teal-dark
+        p
+            font-size: .95rem
+            color: $dpg-ink
+        &:hover h3
+            color: $dpg-teal
+    &__tag
+        display: inline-block
+        padding: .2rem .8rem
+        border-radius: 50rem
+        background: $dpg-yellow
+        color: $dpg-teal-dark
+        font-size: .72rem
+        font-weight: 700
+        letter-spacing: .12em
+        text-transform: uppercase
+    &__list
+        padding: 1.4rem
+        border: 1px solid $dpg-line
+        border-radius: 1rem
+        background: $dpg-white
+        box-shadow: $dpg-shadow
+        h4
+            margin-bottom: 1rem
+            font-size: 1.15rem
+            color: $dpg-teal-dark
+        a
+            display: flex
+            align-items: center
+            gap: .9rem
+            padding: .7rem 0
+            border-top: 1px solid $dpg-line
+            font-size: .95rem
+            line-height: 1.4
+            color: $dpg-teal-dark
+            &:hover
+                color: $dpg-teal
+        img
+            flex: 0 0 64px
+            width: 64px
+            height: 64px
+            object-fit: cover
+            border-radius: .6rem
+
+
+// ================= 17. LEGACY + UNIVERSE =================
+.dpg-legacy
+    background: linear-gradient(135deg, #062F36, $dpg-teal-dark)
+    color: rgba($dpg-white, .85)
+    &__grid
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 3.5rem
+        align-items: center
+        p
+            margin-bottom: .8rem
+            font-family: $fontBody
+            line-height: 1.85
+            color: rgba($dpg-white, .82)
+    &__title
+        margin: .6rem 0 1.2rem
+        font-size: clamp(1.9rem, 3.2vw, 2.7rem)
+        color: $dpg-white
+    &__img
+        padding: .6rem
+        border: 1px solid rgba($dpg-yellow, .45)
+        border-radius: 1.2rem
+        img
+            display: block
+            width: 100%
+            aspect-ratio: 4 / 3
+            object-fit: cover
+            border-radius: .9rem
+
+.dpg-universe
+    margin-top: 4rem
+    padding-top: 2.5rem
+    border-top: 1px solid rgba($dpg-white, .12)
+    text-align: center
+    h3
+        margin-bottom: 1.5rem
+        font-size: 1.6rem
+        color: $dpg-white
+        span
+            color: $dpg-yellow
+    &__grid
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        gap: 14px
+    &__item
+        display: grid
+        place-items: center
+        min-height: 84px
+        padding: .8rem 1rem
+        border: 1px solid rgba($dpg-white, .18)
+        border-radius: .8rem
+        background: rgba($dpg-white, .06)
+        font-size: .95rem
+        font-weight: 500
+        color: $dpg-white
+
+
+// ================= 18. FAQ =================
+.dpg-faq
+    &__list
+        max-width: 900px
+    &__item
+        margin-bottom: .9rem
+        border: 1px solid $dpg-line
+        border-radius: .9rem
+        background: $dpg-white
+        box-shadow: 0 4px 14px rgba($dpg-teal-dark, .05)
+        summary
+            display: flex
+            align-items: center
+            justify-content: space-between
+            gap: 1rem
+            padding: 1.1rem 1.4rem
+            font-size: 1.1rem
+            font-weight: 500
+            color: $dpg-teal-dark
+            cursor: pointer
+            list-style: none
+            &::-webkit-details-marker
+                display: none
+            &::after
+                content: "+"
+                display: grid
+                place-items: center
+                flex: 0 0 30px
+                height: 30px
+                border-radius: 50%
+                background: $dpg-teal-dark
+                color: $dpg-yellow
+                font-size: 1.3rem
+                line-height: 1
+        &[open] summary::after
+            content: "\2212"
+        p
+            padding: 0 1.4rem 1.3rem
+            font-family: $fontBody
+            font-size: .95rem
+            line-height: 1.8
+            color: $dpg-ink
+
+
+// ================= 19. CTA =================
+.dpg-cta
+    padding: 2.5rem 0
+    font-family: $fontHeading
+    background: $dpg-yellow
+    &__in
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: space-between
+        gap: 1.5rem
+        h2
+            margin: 0 0 .2rem
+            font-size: clamp(1.4rem, 2.6vw, 2rem)
+            color: $dpg-teal-dark
+        p
+            color: $dpg-teal-dark
+    &__btn
+        display: inline-flex
+        align-items: center
+        gap: .5rem
+        padding: .7rem 1.8rem
+        border: 2px solid $dpg-teal-dark
+        border-radius: 50rem
+        background: $dpg-teal-dark
+        color: $dpg-yellow
+        font-weight: 600
+        letter-spacing: .6px
+        text-transform: uppercase
+        transition: .2s
+        &:hover
+            background: transparent
+            color: $dpg-teal-dark
+        &--line
+            background: transparent
+            color: $dpg-teal-dark
+            &:hover
+                background: $dpg-teal-dark
+                color: $dpg-yellow
+
+
+// ================= 20. FOOTER =================
+.dpg-footer
+    position: relative
+    font-family: $fontHeading
+    background: $dpg-teal-dark
+    color: rgba($dpg-white, .82)
+
+    &__news
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: space-between
+        gap: 1.5rem
+        padding: 2.5rem 0
+        border-bottom: 1px solid rgba($dpg-white, .12)
+        h3
+            margin: 0 0 .2rem
+            font-size: 1.5rem
+            color: $dpg-white
+        p
+            color: rgba($dpg-white, .75)
+
+    &__form
+        display: flex
+        width: min(100%, 440px)
+        input
+            flex: 1
+            min-width: 0
+            padding: .75rem 1.1rem
+            border: 1px solid rgba($dpg-white, .25)
+            border-right: 0
+            border-radius: 50rem 0 0 50rem
+            background: rgba($dpg-white, .08)
+            color: $dpg-white
+            outline: 0
+            &::placeholder
+                color: rgba($dpg-white, .6)
+        button
+            padding: .75rem 1.5rem
+            border: 0
+            border-radius: 0 50rem 50rem 0
+            background: $dpg-yellow
+            color: $dpg-teal-dark
+            font-weight: 600
+            text-transform: uppercase
+            letter-spacing: .5px
+
+    &__grid
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        gap: 2.5rem 2rem
+        padding: 3.5rem 0 2.5rem
+
+    &__title
+        position: relative
+        margin-bottom: 1.3rem
+        padding-bottom: .8rem
+        font-family: $fontBaskerville
+        font-size: 1.2rem
+        color: $dpg-white
+        &::after
+            content: ""
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 36px
+            height: 3px
+            border-radius: 3px
+            background: $dpg-yellow
+
+    &__list
+        li
+            margin-bottom: .55rem
+        a
+            display: inline-block
+            font-size: .95rem
+            font-weight: 300
+            letter-spacing: .3px
+            color: rgba($dpg-white, .78)
+            transition: .2s
+            &:hover
+                padding-left: .3rem
+                color: $dpg-yellow
+
+    &__contact
+        grid-column: span 2
+
+    &__item
+        display: flex
+        gap: .9rem
+        margin-bottom: 1.1rem
+        font-size: .95rem
+        line-height: 1.7
+        i
+            display: grid
+            place-items: center
+            flex: 0 0 40px
+            height: 40px
+            border-radius: 50%
+            background: $dpg-white
+            color: $dpg-teal-dark
+            font-size: 1.1rem
+        a
+            color: $dpg-yellow
+            &:hover
+                color: $dpg-white
+
+    &__map
+        height: 150px
+        overflow: hidden
+        border: 1px solid rgba($dpg-white, .15)
+        border-radius: .8rem
+        iframe
+            width: 100%
+            height: 100%
+            border: 0
+
+    &__brand
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: space-between
+        gap: 1.2rem
+        padding: 1.8rem 0 2rem
+        border-top: 1px solid rgba($dpg-white, .12)
+
+    &__logo
+        display: flex
+        align-items: center
+        gap: 1rem
+        font-size: .95rem
+        img
+            height: 56px
+            width: auto
+            padding: .3rem .6rem
+            border-radius: .6rem
+            background: $dpg-white
+
+    &__social
+        display: flex
+        gap: .6rem
+        a
+            display: grid
+            place-items: center
+            width: 40px
+            height: 40px
+            border: 1px solid rgba($dpg-white, .25)
+            border-radius: 50%
+            color: $dpg-white
+            transition: .2s
+            &:hover
+                background: $dpg-yellow
+                border-color: $dpg-yellow
+                color: $dpg-teal-dark
+
+    &__bar
+        padding: 1.2rem 0
+        background: rgba(0, 0, 0, .22)
+        font-size: .875rem
+        color: rgba($dpg-white, .7)
+        a
+            color: $dpg-yellow
+
+
+// ================= RESPONSIVE =================
+@media (max-width: #{$bp-xl - .02px})
+    .dpg-career
+        grid-template-columns: repeat(3, 1fr)
+    .dpg-footer__grid
+        grid-template-columns: repeat(3, 1fr)
+    .dpg-footer__contact
+        grid-column: span 3
+
+@media (max-width: #{$bp-lg - .02px})
+    .dpg-sec
+        padding: 3.5rem 0
+    .dpg-head
+        margin-bottom: 2.25rem
+    .dpg-about__grid,
+    .dpg-tour__grid,
+    .dpg-legacy__grid,
+    .dpg-schools__grid,
+    .dpg-blog__grid,
+    .dpg-happen__grid
+        grid-template-columns: 1fr
+        gap: 2rem
+    .dpg-about__media
+        padding: 0 0 1.5rem 1.5rem
+    .dpg-flow__stage
+        height: 400px
+    .dpg-flow__item
+        width: 250px
+        height: 350px
+        margin: -175px 0 0 -125px
+    .dpg-place__top
+        grid-template-columns: 1fr
+    .dpg-slider__item
+        flex-basis: calc((100% - 40px) / 3)
+    .dpg-buzz__grid
+        grid-template-columns: 1fr 1fr
+        grid-template-areas: "a a" "b c" "d e"
+        grid-auto-rows: 200px
+    .dpg-research__grid
+        grid-template-columns: repeat(2, 1fr)
+    .dpg-people__grid
+        grid-template-columns: repeat(2, 1fr)
+    .dpg-voices__grid,
+    .dpg-eco__grid
+        grid-template-columns: 1fr
+        max-width: 520px
+        margin: 0 auto
+    .dpg-testi__grid
+        grid-template-columns: 1fr
+        gap: 56px
+        max-width: 520px
+        margin: 0 auto
+    .dpg-universe__grid
+        grid-template-columns: repeat(2, 1fr)
+    .dpg-footer__grid
+        grid-template-columns: repeat(2, 1fr)
+    .dpg-footer__contact
+        grid-column: span 2
+
+@media (max-width: #{$bp-md - .02px})
+    .dpg-career
+        grid-template-columns: repeat(2, 1fr)
+    .dpg-slider__item
+        flex-basis: calc((100% - 20px) / 2)
+    .dpg-star__grid
+        grid-template-columns: 1fr
+        justify-items: center
+        .dpg-star__photo
+            width: 200px
+    .dpg-star__quote
+        padding: 2.75rem 1.5rem 2.25rem
+    .dpg-vid__play
+        width: 68px
+        height: 68px
+        margin: -34px 0 0 -34px
+        font-size: 1.5rem
+    .dpg-strip__logo
+        width: 150px
+    .dpg-schools__slide
+        min-height: 320px
+        padding: 1.5rem
+    .dpg-fade__nav
+        position: static
+        justify-content: flex-end
+        margin-top: .8rem
+
+@media (max-width: #{$bp-sm - .02px})
+    .dpg-slider__item
+        flex-basis: 82%
+    .dpg-people__grid
+        grid-template-columns: 1fr
+        max-width: 320px
+        margin: 0 auto
+    .dpg-research__grid,
+    .dpg-footer__grid
+        grid-template-columns: 1fr
+    .dpg-footer__contact
+        grid-column: auto
+    .dpg-buzz__grid
+        grid-auto-rows: 150px
+    .dpg-cta__in
+        justify-content: center
+        text-align: center
+
+@media (prefers-reduced-motion: reduce)
+    .dpg-strip__track
+        animation: none
+    .dpg-strip
+        overflow-x: auto
+    .dpg-vid__play
+        animation: none
+    .dpg-fade__slide,
+    .dpg-flow__item
+        transition: none

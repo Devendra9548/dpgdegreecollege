@@ -1,31 +1,172 @@
-$hcolor: #000
-$pcolor: #453d3d
-$brandcolor: #24748c
-$fontPoppins: "Poppins", sans-serif
-$fontKonkhmer: "Konkhmer Sleokchher", system-ui
-$fontAlexandria: "Alexandria", sans-serif
+// Style.sass code here
 
-h1,h2,h3,h4,h5,h6
-    font-family: $fontAlexandria
+$dpg-teal-dark: #073C44
+$dpg-teal:      #117569
+$dpg-yellow:    #FAC90D
+$dpg-white:     #FFFFFF
+// Secondary
+$dpg-orange:    #DC5828
+$dpg-green:     #6EB12D
+// Sirf banners ke liye (header / buttons / text me mat lagana)
+$dpg-red:       #AB1E23
+
+// Text colours
+$hcolor:        $dpg-teal-dark      // headings
+$pcolor:        $dpg-teal-dark      // paragraph / body text
+$brandcolor:    $dpg-teal           // main brand colour
+$linkcolor:     $dpg-teal-dark
+$linkhover:     $dpg-teal
+
+// ---------- 2. FONTS ----------
+// Guidebook: Sans-serif = Oswald | Serif = Libre Baskerville (Regular, Bold, Italic)
+$fontOswald:     'Oswald', sans-serif
+$fontBaskerville:'Libre Baskerville', serif
+$fontHeading:    $fontOswald          // h1-h6, menu, buttons, address
+$fontBody:       $fontBaskerville     // paragraph (chahiye to $fontOswald kar do)
+
+// ---------- 2b. BREAKPOINTS (Bootstrap 5 ke same) ----------
+$bp-sm:  576px
+$bp-md:  768px
+$bp-lg:  992px
+$bp-xl:  1200px
+$bp-xxl: 1400px
+
+// ---------- 3. BOOTSTRAP 5 OVERRIDES ----------
+// (agar Bootstrap ka sass source import kar rahe ho to ye lines uske pehle rakho)
+$primary:   $dpg-teal-dark
+$secondary: $dpg-teal
+$success:   $dpg-green
+$warning:   $dpg-yellow
+$danger:    $dpg-red
+$body-color: $pcolor
+$font-family-sans-serif: $fontHeading
+$font-family-base:       $fontBody
+$headings-font-family:   $fontHeading
+$headings-color:         $hcolor
+$link-color:             $linkcolor
+$link-hover-color:       $linkhover
+// @import "bootstrap/scss/bootstrap"   <- yahan aayega
+
+// CDN Bootstrap ke liye bhi chalne wale variables
+:root
+    --bs-body-font-family: #{$fontBody}
+    --bs-body-color: #{$pcolor}
+    --bs-link-color: #{$linkcolor}
+    --bs-link-hover-color: #{$linkhover}
+
+// ---------- 4. BASE TYPOGRAPHY ----------
+// Font body par ek baar set karo, baaki sab inherit karenge.
+// NOTE: 'i' tag me font-family mat lagana, warna Bootstrap Icons / Font Awesome ke icons toot jate hain.
+body
+    font-family: $fontBody
+    color: $pcolor
+    font-size: 1rem
+    line-height: 1.7
+
+h1, h2, h3, h4, h5, h6
+    font-family: $fontHeading
     color: $hcolor
-    
-p,ul,li,span,a,i,strong,div,body
-    font-family: $fontPoppins
+    font-weight: 600
+    line-height: 1.2
+    letter-spacing: .3px
+
+h1
+    font-weight: 700
+
+p
+    margin-bottom: 0
+    font-size: 1rem
     color: $pcolor
 
+ul
+    padding-left: 0
+    margin-bottom: 0
+    list-style: none
 
-.bg-blue
-    background: $brandcolor !important
-
-.bg-yellow
-    background: #f9f2eb !important
+strong, b
+    font-weight: 700
 
 a
-    color: $pcolor
-    text-decoration: none !important
-p
-    margin-bottom: 0px !important
-    font-size: 1rem !important
+    color: $linkcolor
+    text-decoration: none
+    transition: color .2s
+    &:hover
+        color: $linkhover
+
+// Headings jaisa font chahiye wahan (menu, buttons, labels)
+.font-heading
+    font-family: $fontHeading
+.font-body
+    font-family: $fontBody
+
+// ---------- 5. BACKGROUND UTILITIES ----------
+.bg-teal-dark
+    background: $dpg-teal-dark
+    color: $dpg-white
+.bg-blue            // purana class, ab brand teal
+    background: $brandcolor
+    color: $dpg-white
+.bg-teal
+    background: $dpg-teal
+    color: $dpg-white
+.bg-yellow
+    background: $dpg-yellow
+    color: $dpg-teal-dark
+.bg-orange
+    background: $dpg-orange
+    color: $dpg-white
+.bg-green
+    background: $dpg-green
+    color: $dpg-white
+.bg-banner-red      // sirf banners
+    background: $dpg-red
+    color: $dpg-white
+.bg-cream           // purana #f9f2eb wala soft background (brand colour nahi, sections ke liye)
+    background: #f9f2eb
+
+// ---------- 6. TEXT UTILITIES ----------
+.text-teal-dark
+    color: $dpg-teal-dark
+.text-teal
+    color: $dpg-teal
+.text-yellow
+    color: $dpg-yellow
+.text-orange
+    color: $dpg-orange
+.text-green
+    color: $dpg-green
+
+// ---------- 7. BUTTONS ----------
+.btn-dpg
+    background: $dpg-yellow
+    color: $dpg-teal-dark
+    font-family: $fontHeading
+    font-weight: 600
+    letter-spacing: .6px
+    text-transform: uppercase
+    border: 0
+    border-radius: 50rem
+    padding: .6rem 1.6rem
+    transition: .2s
+    &:hover
+        background: $dpg-teal-dark
+        color: $dpg-yellow
+
+.btn-dpg-outline
+    background: transparent
+    color: $dpg-teal-dark
+    font-family: $fontHeading
+    font-weight: 600
+    letter-spacing: .6px
+    text-transform: uppercase
+    border: 2px solid $dpg-teal-dark
+    border-radius: 50rem
+    padding: .55rem 1.5rem
+    transition: .2s
+    &:hover
+        background: $dpg-teal-dark
+        color: $dpg-white
+
 
 
 .prev-arrow,.next-arrow
@@ -44,13 +185,13 @@ p
     left: auto
 
 .prev-arrow:hover,.next-arrow:hover
-    background: #fff!important
-    color: #000!important
-    border-color: #fff!important
+    background: #fff
+    color: #000
+    border-color: #fff
 
 .globalbtn
     background: $brandcolor
-    font-family: $fontPoppins
+    font-family: $fontBaskerville
     font-weight: 500
     color: #fff
     padding: 15px 20px
@@ -63,27 +204,27 @@ p
 
 
 .slick-arrow
-    z-index: 9 !important
-    position: absolute !important
-    top: -50px !important
-    width: 37px !important
-    left: 0px !important
-    text-align: left !important
+    z-index: 9 
+    position: absolute 
+    top: -50px 
+    width: 37px 
+    left: 0px 
+    text-align: left 
 
 .slick-next
-    left: 40px !important
+    left: 40px 
 
 .slick-next:before, .slick-prev:before
-    font-size: 30px !important
-    opacity: 1 !important
-    color: #24748c !important
+    font-size: 30px 
+    opacity: 1 
+    color: #24748c 
 
 .slick-list
-    padding: 0px !important
+    padding: 0px 
 
 .slick-dots li button:before
-    font-size: 12px !important
-    color: #24748c !important
+    font-size: 12px 
+    color: #24748c 
     margin-top: 15px
 
 
@@ -107,7 +248,7 @@ p
 
 @media only screen and (max-width:768px)
     .globalbtn
-        font-size: 16px !important
+        font-size: 16px 
 
     .prev-arrow, .next-arrow
         top: 46%
