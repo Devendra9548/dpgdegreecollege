@@ -255,50 +255,38 @@ $banners=[
 </section>
 
 <section class="dpg-stats py-5">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-stats__grid">
-
-            <!-- A: lamba tile (2 row) | image: portrait 600x900 -->
             <div class="dpg-stats__tile dpg-stats__tile--a" style="--bg: url('/assets/front/imgs/banners/7.jpg')">
                 <div class="dpg-stats__content">
                     <div class="dpg-stats__num"><span class="count" data-count="20">20</span><span class="plus">+</span></div>
                     <p class="dpg-stats__label">Programs Offered</p>
                 </div>
             </div>
-
-            <!-- B | image: 600x440 -->
             <div class="dpg-stats__tile dpg-stats__tile--b" style="--bg: url('/assets/front/imgs/banners/6.jpg')">
                 <div class="dpg-stats__content">
                     <div class="dpg-stats__num"><span class="count" data-count="5">5</span></div>
                     <p class="dpg-stats__label">Colleges &amp; Schools</p>
                 </div>
             </div>
-
-            <!-- C: chauda tile | image: 1250x440 -->
             <div class="dpg-stats__tile dpg-stats__tile--c" style="--bg: url('/assets/front/imgs/banners/14.jpg')">
                 <div class="dpg-stats__content">
                     <div class="dpg-stats__num"><span class="count" data-count="5000">5000</span><span class="plus">+</span></div>
                     <p class="dpg-stats__label">Students Enrolled</p>
                 </div>
             </div>
-
-            <!-- D | image: 600x440 -->
             <div class="dpg-stats__tile dpg-stats__tile--d" style="--bg: url('/assets/front/imgs/banners/21.jpg')">
                 <div class="dpg-stats__content">
                     <div class="dpg-stats__num"><span class="count" data-count="100">100</span><span class="plus">+</span></div>
                     <p class="dpg-stats__label">Research &amp; Publications</p>
                 </div>
             </div>
-
-            <!-- E: chauda tile | image: 1250x440 -->
             <div class="dpg-stats__tile dpg-stats__tile--e" style="--bg: url('/assets/front/imgs/banners/41.jpg')">
                 <div class="dpg-stats__content">
                     <div class="dpg-stats__num"><span class="count" data-count="10000">10000</span><span class="plus">+</span></div>
                     <p class="dpg-stats__label">Books in Library</p>
                 </div>
             </div>
-
-            <!-- F: chauda tile | image: 1250x440 -->
             <div class="dpg-stats__tile dpg-stats__tile--f" style="--bg: url('/assets/front/imgs/banners/19.jpg')">
                 <div class="dpg-stats__content">
                     <div class="dpg-stats__num"><span class="count" data-count="2000">2000</span><span class="plus">+</span></div>
@@ -310,12 +298,6 @@ $banners=[
     </div>
 </section>
 
-{{-- =====================================================================
-     NEW SECTIONS  →  home file me sabse neeche paste karo,
-     existing code ke baad aur  @endsection  se THEEK PEHLE.
-     (pichla home_append.blade.php poora hata kar ye paste karna)
-     Layouts: reference_1 (SGT) + reference_2 (Bennett), DPG theme me.
-     ===================================================================== --}}
 
 @php
     $b = function ($n) { return '/assets/front/imgs/banners/' . $n . '.jpg'; };
@@ -372,22 +354,17 @@ $banners=[
         ['i-award', 50,    '+', 'Seminars & Conferences'],
     ];
 
-    $leaders = [ // name, designation
-        ['Name Surname', 'Chairman'], ['Name Surname', 'Director'], ['Name Surname', 'Principal'],
-        ['Name Surname', 'Vice Principal'], ['Name Surname', 'Dean Academics'], ['Name Surname', 'Head, Training & Placement'],
-    ];
-
     $star = [
         'name' => 'Alumni Name', 'dept' => 'Department / Programme', 'role' => 'Designation, Organisation',
         'img'  => '/assets/front/imgs/alumni/star.jpg',
         'quote' => 'Being a part of DPG Degree College, Gurugram, has truly been a wonderful journey. I received immense support from the entire department. I will always be grateful for these opportunities and blessings!',
     ];
 
-    $tourVideoId = 'YOUR_YOUTUBE_VIDEO_ID';  // 360° video ki YouTube ID
+    $tourVideoId = 'KtfpuHYNkJg';  // 360° video ki YouTube ID
     $voices = [ // name, designation, thumb, youtube id
-        ['Guest Name', 'Designation, Organisation', $b(5),  'YOUR_YOUTUBE_VIDEO_ID'],
-        ['Guest Name', 'Designation, Organisation', $b(6),  'YOUR_YOUTUBE_VIDEO_ID'],
-        ['Guest Name', 'Designation, Organisation', $b(7),  'YOUR_YOUTUBE_VIDEO_ID'],
+        ['Guest Name', 'Designation, Organisation', $b(5),  'KtfpuHYNkJg'],
+        ['Guest Name', 'Designation, Organisation', $b(6),  'KtfpuHYNkJg'],
+        ['Guest Name', 'Designation, Organisation', $b(7),  'KtfpuHYNkJg'],
     ];
 
     $testimonials = [
@@ -402,7 +379,7 @@ $banners=[
 
     $blogs = [ ['Career Opportunities After B.Com', 18], ['How to Choose the Right Course After 12th', 20], ['Why NAAC Accreditation Matters', 22], ['Scholarship Schemes for Students', 24] ];
 
-    $universe = [ 'DPG Degree College', 'DPG School of Technology & Management', 'DPG Institution', 'DPG Institution', 'DPG Institution' ];
+    $universe = [ 'Technology', 'Management', 'DPG Institution', 'DPG Institution', 'DPG Institution' ];
 
     $faqs = [
         ['Is DPG Degree College recognised?', 'DPG Degree College is an autonomous college approved by AICTE and NCTE, affiliated to MDU Rohtak, recognised under 2(f) by UGC and accredited with "A" grade by NAAC.'],
@@ -412,40 +389,13 @@ $banners=[
         ['Can I take a virtual tour of the campus?', 'Yes, you can explore the campus through our 360° virtual tour video on this page.'],
     ];
 
-    $f_adm   = ['Admission 2026-27', 'How To Apply', 'List of Courses', 'Scholarship', 'Brochure', 'FAQ'];
-    $f_imp   = ['Anti-Ragging Committee', 'MDU Rohtak', 'UGC', 'AICTE Link for LOA and EOA', 'IGNOU', 'IREED', 'Privacy Policy'];
-    $f_use   = ['Subject Combinations', 'How to Reach Us', 'Committees', 'Student Feedback', 'Faculty Feedback', 'Online Grievance', 'Grievance & Redressal Cell', 'Internal Complaint Committee'];
-    $f_con   = ['Contact Us', 'ERP Login', 'Information Corner', 'Examination', 'IQAC', 'NAAC'];
-    $f_grow  = ['Placements', 'Alumni', 'Achievements', 'Photo Gallery', 'Feedback'];
-    $f_learn = ['Research', 'Infrastructure', 'E-Learning', 'IGNOU Study Center', 'ITEP', 'NIRF Data'];
 @endphp
 
-{{-- Icon sprite --}}
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
-    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></symbol>
-    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></symbol>
-    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
-    <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
-    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
-    <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
-    <symbol id="i-left" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></symbol>
-    <symbol id="i-right" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></symbol>
-    <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
-    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
-    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
-    <symbol id="i-yt" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></symbol>
-    <symbol id="i-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
-</svg>
-
-{{-- 1 ===================== ABOUT (Bennett style) ===================== --}}
 <section class="dpg-sec dpg-about">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-about__grid">
             <div class="dpg-about__media">
-                <img src="{{ $b(14) }}" alt="DPG Degree College campus" loading="lazy">
+                <img src="/assets/front/imgs/welcome2.jpg" alt="DPG Degree College campus" loading="lazy">
                 <span class="dpg-about__badge"><strong>NAAC</strong> 'A' Grade</span>
             </div>
             <div>
@@ -459,20 +409,53 @@ $banners=[
     </div>
 </section>
 
-{{-- 2 ===================== DISCIPLINES COVERFLOW (SGT style) ===================== --}}
+<?php 
+$deparmentswithname=[
+    [
+        "name" => "Physical Science Department",
+        "img" => "/assets/front/imgs/departments/1.jpeg"
+    ],
+    [
+        "name" => "Life Science Department",
+        "img" => "/assets/front/imgs/departments/2.jpeg"
+    ],
+    [
+        "name" => "Computer Science Department",
+        "img" => "/assets/front/imgs/departments/3.jpeg"
+    ],
+    [
+        "name" => "Management Department",
+        "img" => "/assets/front/imgs/departments/4.jpeg"
+    ],
+    [
+        "name" => "Arts & Humanities Department",
+        "img" => "/assets/front/imgs/departments/5.jpeg"
+    ],
+    [
+        "name" => "Commerce Department",
+        "img" => "/assets/front/imgs/departments/6.jpeg"
+    ],
+    [
+        "name" => "Department of Journalism and Mass Communication",
+        "img" => "/assets/front/imgs/departments/7.jpeg"
+    ],
+
+];
+?>
+
 <section class="dpg-sec dpg-flow">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-head dpg-head--light">
             <h2 class="dpg-head__title dpg-head__title--serif">Multiple Disciplines, Infinite Possibilities</h2>
-            <p class="dpg-head__sub">With {{ count($disc) }} dynamic schools and departments, DPG empowers students with endless opportunities.</p>
+            <p class="dpg-head__sub">With {{ count($deparmentswithname) }} dynamic schools and departments, DPG empowers students with endless opportunities.</p>
         </div>
         <div class="dpg-flow__wrap">
             <button type="button" class="dpg-flow__arrow dpg-flow__arrow--prev" data-flow="prev" aria-label="Previous"><svg class="dpg-i"><use href="#i-left"/></svg></button>
             <div class="dpg-flow__stage">
-                @foreach($disc as $d)
+                @foreach($deparmentswithname as $deparmentswithname)
                 <div class="dpg-flow__item">
-                    <img src="{{ $b($d[1]) }}" alt="{{ $d[0] }}" loading="lazy">
-                    <span class="dpg-flow__cap">{{ $d[0] }}</span>
+                    <img src="{{ $deparmentswithname['img'] }}" alt="{{ $deparmentswithname['name'] }}" loading="lazy">
+                    <span class="dpg-flow__cap">{{ $deparmentswithname['name'] }}</span>
                 </div>
                 @endforeach
             </div>
@@ -482,9 +465,81 @@ $banners=[
     </div>
 </section>
 
-{{-- 3 ===================== PLACEMENT: outcomes + career centre + recruiters ===================== --}}
+<?php
+$recruiters=[
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/1.jpeg"
+    ],
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/2.jpeg"
+    ],
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/3.jpeg"
+    ],
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/4.jpeg"
+    ],
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/5.jpeg"
+    ],
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/6.jpeg"
+    ],
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/7.jpeg"
+    ],
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/8.jpeg"
+    ],
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/9.jpeg"
+    ],
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/10.jpeg"
+    ],
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/11.jpeg"
+    ],
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/12.jpeg"
+    ],
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/13.jpeg"
+    ],
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/14.jpeg"
+    ],
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/15.jpeg"
+    ],
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/16.jpeg"
+    ],
+    [
+        "name" => "Recruiters",
+        "img" => "/assets/front/imgs/recruiters/17.jpeg"
+    ]
+];
+?>
+
 <section class="dpg-sec dpg-sec--soft dpg-place" id="placements">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-head">
             <span class="dpg-head__eyebrow">Placements</span>
             <h2 class="dpg-head__title">Career Outcomes</h2>
@@ -518,21 +573,49 @@ $banners=[
 
         <div class="dpg-strip">
             <div class="dpg-strip__track">
-                @for($g = 0; $g < 2; $g++)
-                <div class="dpg-strip__group" @if($g) aria-hidden="true" @endif>
-                    @foreach($recruiters as $r)
-                    <div class="dpg-strip__logo"><img src="/assets/front/imgs/recruiters/{{ $r[1] }}" alt="{{ $r[0] }}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div>
+                <div class="dpg-strip__group">
+                    @foreach($recruiters as $recruiters)
+                    <div class="dpg-strip__logo">
+                        <img src="{{$recruiters['img']}}" alt="{{$recruiters['name']}}" loading="lazy">
+                    </div>
                     @endforeach
                 </div>
-                @endfor
             </div>
         </div>
     </div>
 </section>
 
-{{-- 4 ===================== SUCCESS STORIES (Bennett tabs) ===================== --}}
+<?php
+$reviews=[
+    [
+        "name" => "reviews",
+        "img" => "/assets/front/imgs/reviews/1.jpg"
+    ],
+    [
+        "name" => "reviews",
+        "img" => "/assets/front/imgs/reviews/2.jpg"
+    ],
+    [
+        "name" => "reviews",
+        "img" => "/assets/front/imgs/reviews/3.jpg"
+    ],
+    [
+        "name" => "reviews",
+        "img" => "/assets/front/imgs/reviews/4.jpg"
+    ],
+    [
+        "name" => "reviews",
+        "img" => "/assets/front/imgs/reviews/5.jpg"
+    ],
+    [
+        "name" => "reviews",
+        "img" => "/assets/front/imgs/reviews/6.jpg"
+    ],
+];
+?>
+
 <section class="dpg-sec dpg-stories">
-    <div class="container-xxl dpg-tabs">
+    <div class="container dpg-tabs">
         <div class="dpg-head dpg-head--left">
             <span class="dpg-head__eyebrow dpg-head__eyebrow--left">Success Stories</span>
             <h2 class="dpg-head__title">Meet Our Top Achievers</h2>
@@ -548,7 +631,11 @@ $banners=[
             <div class="dpg-slider__track">
                 @foreach($courses as $k => $course)
                 <article class="dpg-slider__item dpg-acard">
-                    <div class="dpg-acard__img"><span class="dpg-avatar" data-i="A"><img src="/assets/front/imgs/alumni/{{ $i + 1 }}-{{ $k + 1 }}.jpg" alt="Alumni" loading="lazy" onerror="this.remove()"></span></div>
+                    <div class="dpg-acard__img">
+                        <span class="dpg-avatar" data-i="A">
+                           <img src="/assets/front/imgs/alumni/{{ $i + 1 }}-{{ $k + 1 }}.jpeg" alt="Alumni" loading="lazy">
+                        </span>
+                    </div>
                     <div class="dpg-acard__body">
                         <h4 class="dpg-acard__name">Alumni Name</h4>
                         <p class="dpg-acard__meta">{{ $course }}</p>
@@ -567,9 +654,34 @@ $banners=[
     </div>
 </section>
 
-{{-- 5 ===================== LATEST HAPPENINGS + IN THE PRESS (SGT) ===================== --}}
+<?php 
+$newsltters=[
+    [
+        "name" => "Physical Science Department",
+        "img" => "/assets/front/imgs/newsletters/1.webp"
+    ],
+    [
+        "name" => "Life Science Department",
+        "img" => "/assets/front/imgs/newsletters/2.webp"
+    ],
+    [
+        "name" => "Computer Science Department",
+        "img" => "/assets/front/imgs/newsletters/3.webp"
+    ],
+    [
+        "name" => "Management Department",
+        "img" => "/assets/front/imgs/newsletters/4.webp"
+    ],
+    [
+        "name" => "Arts & Humanities Department",
+        "img" => "/assets/front/imgs/newsletters/5.webp"
+    ],
+
+];
+?>
+
 <section class="dpg-sec dpg-sec--blue dpg-happen">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-happen__grid">
             <div>
                 <h2 class="dpg-bar-title">Latest Happenings</h2>
@@ -593,8 +705,12 @@ $banners=[
             <div>
                 <h2 class="dpg-bar-title">In the Press</h2>
                 <ul class="dpg-press">
-                    @foreach($press as $p)
-                    <li><a href="#"><span class="dpg-press__logo">{{ $p[0] }}</span><span class="dpg-press__text">{{ $p[1] }}</span></a></li>
+                    @foreach($newsltters as $newsltters)
+                    <li>
+                        <a href="#">
+                            <img src="{{$newsltters['img']}}" alt="{{$newsltters['name']}}" class="dpg-press__logo" />
+                            <span class="dpg-press__text">{{$newsltters['name']}}</span>
+                        </a></li>
                     @endforeach
                 </ul>
                 <div class="text-end"><a href="#" class="dpg-btn-sm">View all</a></div>
@@ -603,9 +719,8 @@ $banners=[
     </div>
 </section>
 
-{{-- 6 ===================== CAMPUS BUZZ MOSAIC (SGT / Bennett "Life in Pictures") ===================== --}}
 <section class="dpg-sec dpg-buzz">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-buzz__grid">
             <a href="#" class="dpg-buzz__a" style="--bg: url('{{ $b(18) }}')"></a>
             <div class="dpg-buzz__card">
@@ -619,9 +734,8 @@ $banners=[
     </div>
 </section>
 
-{{-- 7 ===================== 360° VIRTUAL TOUR ===================== --}}
 <section class="dpg-sec dpg-tour">
-    <div class="container-xxl position-relative">
+    <div class="container position-relative">
         <div class="dpg-tour__grid">
             <div>
                 <div class="dpg-head dpg-head--left dpg-head--light">
@@ -645,9 +759,8 @@ $banners=[
     </div>
 </section>
 
-{{-- 8 ===================== EXPLORE SCHOOLS + UPCOMING EVENTS (Bennett) ===================== --}}
 <section class="dpg-sec dpg-schools">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-head dpg-head--left">
             <span class="dpg-head__eyebrow dpg-head__eyebrow--left">Academics</span>
             <h2 class="dpg-head__title">Explore Our Schools</h2>
@@ -675,14 +788,14 @@ $banners=[
                     <li><span class="dpg-events__date"><b>{{ $e[0] }}</b>{{ $e[1] }}</span><span><strong>{{ $e[2] }}</strong><em>{{ $e[3] }}</em></span></li>
                     @endforeach
                 </ul>
+                <div class="text-end"><a href="#" class="dpg-btn-sm">View all</a></div>
             </aside>
         </div>
     </div>
 </section>
 
-{{-- 9 ===================== RESEARCH EXCELLENCE (Bennett) ===================== --}}
 <section class="dpg-sec dpg-sec--soft dpg-research">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-head dpg-head--left">
             <span class="dpg-head__eyebrow dpg-head__eyebrow--left">Research</span>
             <h2 class="dpg-head__title">Research Excellence</h2>
@@ -700,26 +813,67 @@ $banners=[
     </div>
 </section>
 
-{{-- 10 ===================== DISTINGUISHED PERSONALITIES (SGT) ===================== --}}
+<?php 
+$ourteam=[
+    [
+        "name" => "Name Surname",
+        "position" => "Chairman",
+        "img" => "/assets/front/imgs/ourteams/1-1.jpeg"
+    ],
+    [
+        "name" => "Name Surname",
+        "position" => "Director",
+        "img" => "/assets/front/imgs/ourteams/1-2.jpeg"
+    ],
+    [
+        "name" => "Name Surname",
+        "position" => "Principal",
+        "img" => "/assets/front/imgs/ourteams/1-3.jpeg"
+    ],
+    [
+        "name" => "Name Surname",
+        "position" => "Vice Principal",
+        "img" => "/assets/front/imgs/ourteams/1-4.jpeg"
+    ],
+    [
+        "name" => "Name Surname",
+        "position" => "Dean Academics",
+        "img" => "/assets/front/imgs/ourteams/1-5.jpeg"
+    ],
+    [
+        "name" => "Name Surname",
+        "position" => "Head, Training & Placement",
+        "img" => "/assets/front/imgs/ourteams/1-1.jpeg"
+    ],
+
+];
+?>
+
 <section class="dpg-sec dpg-people">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-head dpg-head--light">
             <h2 class="dpg-head__title dpg-head__title--gold">Distinguished Personalities</h2>
         </div>
         <div class="dpg-people__grid">
-            @foreach($leaders as $k => $l)
+            @foreach($ourteam as $ourteam)
             <article class="dpg-people__card">
-                <div class="dpg-people__img"><span class="dpg-avatar" data-i="{{ mb_substr($l[0], 0, 1) }}"><img src="/assets/front/imgs/leaders/{{ $k + 1 }}.png" alt="{{ $l[1] }}" loading="lazy" onerror="this.remove()"></span></div>
-                <div class="dpg-people__info"><h4>{{ $l[0] }}</h4><span>{{ $l[1] }}</span></div>
+                <div class="dpg-people__img">
+                    <span class="dpg-avatar">
+                        <img src="{{ $ourteam['img'] }}" alt="{{ $ourteam['name'] }}" loading="lazy">
+                    </span>
+                </div>
+                <div class="dpg-people__info">
+                    <h3>{{ $ourteam['name'] }}</h3>
+                    <span>{{ $ourteam['position'] }}</span>
+                </div>
             </article>
             @endforeach
         </div>
     </div>
 </section>
 
-{{-- 11 ===================== STAR ALUMNI OF THE WEEK (SGT) ===================== --}}
 <section class="dpg-sec dpg-star">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-star__grid">
             <div class="dpg-star__photo"><span class="dpg-avatar" data-i="{{ mb_substr($star['name'], 0, 1) }}"><img src="{{ $star['img'] }}" alt="{{ $star['name'] }}" loading="lazy" onerror="this.remove()"></span></div>
             <div>
@@ -735,9 +889,8 @@ $banners=[
     </div>
 </section>
 
-{{-- 12 ===================== EXPERT VOICES (SGT video cards) ===================== --}}
 <section class="dpg-sec dpg-voices">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-head dpg-head--light">
             <h2 class="dpg-head__title dpg-head__title--serif">Expert Voices: Industry Leaders at DPG Campus</h2>
         </div>
@@ -757,9 +910,8 @@ $banners=[
     </div>
 </section>
 
-{{-- 13 ===================== STUDENT TESTIMONIALS ===================== --}}
 <section class="dpg-sec dpg-sec--soft dpg-testi">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-head">
             <span class="dpg-head__eyebrow">Voices</span>
             <h2 class="dpg-head__title">Student Testimonials</h2>
@@ -778,9 +930,8 @@ $banners=[
     </div>
 </section>
 
-{{-- 14 ===================== COLLABORATIONS (Bennett "Academic Collaborations") ===================== --}}
 <section class="dpg-sec dpg-collab">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-head dpg-head--left">
             <span class="dpg-head__eyebrow dpg-head__eyebrow--left">Partnerships</span>
             <h2 class="dpg-head__title">Academic Collaborations</h2>
@@ -800,9 +951,8 @@ $banners=[
     </div>
 </section>
 
-{{-- 15 ===================== DISCOVER THE DPG ECOSYSTEM (Bennett dark) ===================== --}}
 <section class="dpg-sec dpg-eco">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-head dpg-head--light">
             <span class="dpg-head__eyebrow">Campus</span>
             <h2 class="dpg-head__title">Discover The <span>DPG</span> Ecosystem</h2>
@@ -818,9 +968,8 @@ $banners=[
     </div>
 </section>
 
-{{-- 16 ===================== LATEST BLOGS (Bennett) ===================== --}}
 <section class="dpg-sec dpg-sec--soft dpg-blog">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-head dpg-head--left">
             <span class="dpg-head__eyebrow dpg-head__eyebrow--left">Insights</span>
             <h2 class="dpg-head__title">Latest Blogs</h2>
@@ -829,30 +978,33 @@ $banners=[
         <div class="dpg-blog__grid">
             <a href="#" class="dpg-blog__feat">
                 <img src="{{ $b(32) }}" alt="Featured blog" loading="lazy">
-                <div><span class="dpg-blog__tag">Featured</span><h3>Top Courses After 12th at DPG Degree College: Eligibility and Career Scope</h3><p>A complete guide to choosing the right undergraduate programme and the careers it leads to.</p></div>
+                <div><span class="dpg-blog__tag">Featured</span>
+                <h3>Top Courses After 12th at DPG Degree College: Eligibility and Career Scope</h3>
+                <p>A complete guide to choosing the right undergraduate programme and the careers it leads to.</p></div>
             </a>
             <aside class="dpg-blog__list">
-                <h4>Trending Blogs</h4>
+                <h3>Trending Blogs</h3>
                 @foreach($blogs as $bl)
                 <a href="#"><img src="{{ $b($bl[1]) }}" alt="" loading="lazy"><span>{{ $bl[0] }}</span></a>
                 @endforeach
+                <div class="text-end"><a href="#" class="dpg-btn-sm">View all</a></div>
             </aside>
+
         </div>
     </div>
 </section>
 
-{{-- 17 ===================== LEGACY + DPG UNIVERSE (Bennett dark) ===================== --}}
 <section class="dpg-sec dpg-legacy">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-legacy__grid">
             <div>
                 <span class="dpg-head__eyebrow dpg-head__eyebrow--left dpg-head__eyebrow--gold">Our Legacy</span>
                 <h2 class="dpg-legacy__title">A Legacy of Learning &amp; Leadership</h2>
                 <p>For years, DPG Degree College has been shaping young minds with quality education, strong values and a commitment to community. Our NAAC "A" accreditation reflects the trust students and parents place in us.</p>
-                <p>Add your institution's history, founders and milestones here.</p>
+                <p>At DPG Degree College, we pride ourselves on our unwavering commitment to academic excellence and holistic development, as evidenced by our esteemed Grade "A" accreditation from NAAC. An autonomous college approved by AICTE and NCTE, affiliated to MDU Rohtak and recognised under 2(f) by UGC.</p>
                 <a href="#" class="btn-dpg mt-4 d-inline-block">Read Our Story</a>
             </div>
-            <div class="dpg-legacy__img"><img src="{{ $b(33) }}" alt="DPG Degree College building" loading="lazy"></div>
+            <div class="dpg-legacy__img"><img src="/assets/front/imgs/Artboard-1.webp" alt="DPG Degree College building" loading="lazy"></div>
         </div>
         <div class="dpg-universe">
             <h3>House of <span>DPG Universe</span></h3>
@@ -865,7 +1017,7 @@ $banners=[
 
 {{-- 18 ===================== FAQ (Bennett) ===================== --}}
 <section class="dpg-sec dpg-faq">
-    <div class="container-xxl">
+    <div class="container">
         <div class="dpg-head dpg-head--left">
             <span class="dpg-head__eyebrow dpg-head__eyebrow--left">FAQs</span>
             <h2 class="dpg-head__title">Frequently Asked Questions</h2>
@@ -884,7 +1036,7 @@ $banners=[
 
 {{-- 19 ===================== ADMISSION CTA ===================== --}}
 <section class="dpg-cta">
-    <div class="container-xxl dpg-cta__in">
+    <div class="container dpg-cta__in">
         <div><h2>Admissions Open · Session 2026-27</h2><p>Begin your journey with DPG Degree College today.</p></div>
         <div class="d-flex flex-wrap gap-3">
             <a href="#" class="dpg-cta__btn">Apply Now</a>
@@ -893,50 +1045,6 @@ $banners=[
     </div>
 </section>
 
-{{-- 20 ===================== FOOTER (SGT columns + Bennett newsletter) ===================== --}}
-<footer class="dpg-footer">
-    <div class="container-xxl">
-        <div class="dpg-footer__news">
-            <div><h3>Subscribe to our newsletter</h3><p>Get the latest news and updates from DPG Degree College.</p></div>
-            <form class="dpg-footer__form" onsubmit="return false">
-                <input type="email" placeholder="Enter your email" aria-label="Email address">
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-
-        <div class="dpg-footer__grid">
-            @foreach([['Admissions', $f_adm], ['Important Links', $f_imp], ['Useful Links', $f_use], ['Connect With Us', $f_con], ['Grow With Us', $f_grow], ['Learn With Us', $f_learn]] as $col)
-            <div>
-                <h3 class="dpg-footer__title">{{ $col[0] }}</h3>
-                <ul class="dpg-footer__list">@foreach($col[1] as $l)<li><a href="#">{{ $l }}</a></li>@endforeach</ul>
-            </div>
-            @endforeach
-            <div class="dpg-footer__contact">
-                <div class="dpg-footer__item"><i><svg class="dpg-i"><use href="#i-pin"/></svg></i><div>D.P.G. Degree College, 70A, Delhi-Jaipur Expy, Block A, Sector 34, Gurugram, Haryana<br><a href="#">Campus Map</a> &nbsp;|&nbsp; <a href="#">Get Directions</a></div></div>
-                <div class="dpg-footer__item"><i><svg class="dpg-i"><use href="#i-phone"/></svg></i><div>For admission inquiry: <a href="tel:+919250008494">+91-92500-08494</a><br>For Admin/IGNOU: <a href="tel:+919717217335">+91-971-721-7335</a></div></div>
-                <div class="dpg-footer__map"><iframe src="https://www.google.com/maps?q=DPG+Degree+College+Gurugram&output=embed" title="DPG Degree College location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-            </div>
-        </div>
-
-        <div class="dpg-footer__brand">
-            <div class="dpg-footer__logo"><img src="/assets/logo.webp" alt="DPG Degree College" loading="lazy"><span>"NAAC Accredited College" · Affiliated to State University</span></div>
-            <div class="dpg-footer__social">
-                <a href="#" aria-label="Facebook"><svg class="dpg-i"><use href="#i-fb"/></svg></a>
-                <a href="#" aria-label="Instagram"><svg class="dpg-i"><use href="#i-ig"/></svg></a>
-                <a href="#" aria-label="YouTube"><svg class="dpg-i"><use href="#i-yt"/></svg></a>
-                <a href="#" aria-label="LinkedIn"><svg class="dpg-i"><use href="#i-in"/></svg></a>
-            </div>
-        </div>
-    </div>
-    <div class="dpg-footer__bar">
-        <div class="container-xxl d-flex flex-wrap justify-content-between gap-2">
-            <span>Copyrights &copy; {{ date('Y') }} D.P.G. Degree College, Gurugram. All Rights Reserved.</span>
-            <span>Website Designed By : <a href="#">iNet Business Hub</a></span>
-        </div>
-    </div>
-</footer>
-
-{{-- ===================== SCRIPTS FOR NEW SECTIONS ===================== --}}
 <script>
 (function () {
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -997,33 +1105,40 @@ $banners=[
 
     // 4) Coverflow
     each('.dpg-flow', function (f) {
-        var stage = f.querySelector('.dpg-flow__stage');
-        var items = [].slice.call(f.querySelectorAll('.dpg-flow__item'));
-        var n = items.length, a = Math.floor(n / 2), t;
-        function render() {
-            var w = items[0].offsetWidth, gap = w * 0.78, lim = stage.offsetWidth > 900 ? 2 : 1;
-            items.forEach(function (it, i) {
-                var d = i - a;
-                if (d > n / 2) d -= n;
-                if (d < -n / 2) d += n;
-                var ad = Math.abs(d);
-                it.style.transform = 'translateX(' + (d * gap) + 'px) translateZ(' + (-ad * 140) + 'px) rotateY(' + (-d * 16) + 'deg)';
-                it.style.zIndex = 10 - ad;
-                it.style.opacity = ad > lim ? 0 : 1;
-                it.style.pointerEvents = ad > lim ? 'none' : 'auto';
-                it.classList.toggle('is-active', d === 0);
-            });
-        }
-        function go(k) { a = (k + n) % n; render(); }
-        function restart() { clearInterval(t); if (!reduce) t = setInterval(function () { go(a + 1); }, 3500); }
-        items.forEach(function (it, i) { it.addEventListener('click', function () { go(i); restart(); }); });
-        each2(f, '[data-flow]', function (b) {
-            b.addEventListener('click', function () { go(a + (b.getAttribute('data-flow') === 'next' ? 1 : -1)); restart(); });
-        });
-        f.addEventListener('mouseenter', function () { clearInterval(t); });
-        f.addEventListener('mouseleave', restart);
-        window.addEventListener('resize', render);
-        render(); restart();
+    var stage = f.querySelector('.dpg-flow__stage');
+    var items = [].slice.call(f.querySelectorAll('.dpg-flow__item'));
+    var n = items.length, a = Math.floor(n / 2), t;
+
+    function render() {
+    var w = items[0].offsetWidth;
+    var sw = stage.offsetWidth;
+    var gap = w * 0.78;
+    var lim = Math.max(1, Math.ceil((sw / 2) / gap));
+
+    items.forEach(function (it, i) {
+        var d = i - a;
+        if (d > n / 2) d -= n;
+        if (d < -n / 2) d += n;
+        var ad = Math.abs(d);
+        it.style.transform = 'translateX(' + (d * gap) + 'px) translateZ(' + (-ad * 140) + 'px) rotateY(' + (-d * 16) + 'deg)';
+        it.style.zIndex = 100 - ad;
+        it.style.opacity = ad > lim ? 0 : 1;
+        it.style.pointerEvents = ad > lim ? 'none' : 'auto';
+        it.classList.toggle('is-active', d === 0);
+    });
+    }
+
+    function go(k) { a = (k + n) % n; render(); }
+    function restart() { clearInterval(t); if (!reduce) t = setInterval(function () { go(a + 1); }, 3500); }
+
+    items.forEach(function (it, i) { it.addEventListener('click', function () { go(i); restart(); }); });
+    each2(f, '[data-flow]', function (b) {
+        b.addEventListener('click', function () { go(a + (b.getAttribute('data-flow') === 'next' ? 1 : -1)); restart(); });
+    });
+    f.addEventListener('mouseenter', function () { clearInterval(t); });
+    f.addEventListener('mouseleave', restart);
+    window.addEventListener('resize', render);
+    render(); restart();
     });
 
     // 5) Tabs (success stories)

@@ -1,0 +1,205 @@
+@import 'style.sass'
+
+.dpg-footer
+    position: relative
+    font-family: $fontHeading
+    background: $dpg-teal-dark
+    color: rgba($dpg-white, .82)
+
+    .dpg-footer__bar
+        a
+            &:hover
+                color: #fff
+
+    &__news
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: space-between
+        gap: 1.5rem
+        padding: 2.5rem 0
+        border-bottom: 1px solid rgba($dpg-white, .12)
+        h3
+            margin: 0 0 .2rem
+            font-size: 1.5rem
+            color: $dpg-white
+        p
+            color: rgba($dpg-white, .75)
+
+    &__form
+        display: flex
+        width: min(100%, 440px)
+        input
+            flex: 1
+            min-width: 0
+            padding: .75rem 1.1rem
+            border: 1px solid rgba($dpg-white, .25)
+            border-right: 0
+            border-radius: 50rem 0 0 50rem
+            background: rgba($dpg-white, .08)
+            color: $dpg-white
+            outline: 0
+            &::placeholder
+                color: rgba($dpg-white, .6)
+                font-family: $fontBaskerville
+        button
+            padding: .75rem 1.5rem
+            border: 0
+            border-radius: 0 50rem 50rem 0
+            background: $dpg-yellow
+            color: $dpg-teal-dark
+            font-weight: 600
+            text-transform: uppercase
+            letter-spacing: .5px
+
+    &__grid
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        gap: 2.5rem 2rem
+        padding: 3.5rem 0 2.5rem
+
+    &__title
+        position: relative
+        margin-bottom: 1.3rem
+        padding-bottom: .8rem
+        font-family: $fontOswald
+        font-size: 1.2rem
+        color: $dpg-white
+        &::after
+            content: ""
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 36px
+            height: 3px
+            border-radius: 3px
+            background: $dpg-yellow
+
+    &__list
+        li
+            margin-bottom: .55rem
+        a
+            display: inline-block
+            font-size: .95rem
+            font-weight: 300
+            letter-spacing: .3px
+            color: rgba($dpg-white, .78)
+            font-family: $fontBaskerville
+            text-decoration: none
+            transition: .2s
+            &:hover
+                padding-left: .3rem
+                color: $dpg-yellow
+                text-decoration: underline
+
+    &__contact
+        grid-column: span 2
+
+    &__item
+        display: flex
+        gap: .9rem
+        margin-bottom: 1.1rem
+        font-size: .95rem
+        line-height: 1.7
+        i
+            display: grid
+            place-items: center
+            flex: 0 0 40px
+            height: 40px
+            border-radius: 50%
+            background: $dpg-white
+            color: $dpg-teal-dark
+            font-size: 1.1rem
+        a
+            color: $dpg-yellow
+            &:hover
+                color: $dpg-white
+
+    &__map
+        height: 150px
+        overflow: hidden
+        border: 1px solid rgba($dpg-white, .15)
+        border-radius: .8rem
+        iframe
+            width: 100%
+            height: 100%
+            border: 0
+
+    &__brand
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: space-between
+        gap: 1.2rem
+        padding: 1.8rem 0 2rem
+        border-top: 1px solid rgba($dpg-white, .12)
+
+    &__logo
+        display: flex
+        align-items: center
+        gap: 1rem
+        font-size: .95rem
+        img
+            height: 56px
+            width: auto
+            padding: .3rem .6rem
+            border-radius: .6rem
+            background: $dpg-white
+        span
+            font-size: 18px
+
+    &__social
+        display: flex
+        gap: .6rem
+        a
+            display: grid
+            place-items: center
+            width: 40px
+            height: 40px
+            border: 1px solid rgba($dpg-white, .25)
+            border-radius: 50%
+            color: $dpg-white
+            transition: .2s
+            &:hover
+                background: $dpg-yellow
+                border-color: $dpg-yellow
+                color: $dpg-teal-dark
+
+    &__bar
+        padding: 1.2rem 0
+        background: rgba(0, 0, 0, .22)
+        font-size: .875rem
+        color: rgba($dpg-white, .7)
+        a
+            color: $dpg-yellow
+
+.dpg-i
+    width: 1em
+    height: 1em
+    fill: none
+    stroke: currentColor
+    stroke-width: 2
+    stroke-linecap: round
+    stroke-linejoin: round
+    flex-shrink: 0
+    vertical-align: -.125em
+
+@media (max-width: #{$bp-xl - .02px})
+    .dpg-footer__grid
+        grid-template-columns: repeat(3, 1fr)
+    .dpg-footer__contact
+        grid-column: span 3
+
+@media (max-width: #{$bp-lg - .02px})
+    .dpg-universe__grid
+        grid-template-columns: repeat(2, 1fr)
+    .dpg-footer__grid
+        grid-template-columns: repeat(2, 1fr)
+    .dpg-footer__contact
+        grid-column: span 2
+
+@media (max-width: #{$bp-sm - .02px})
+    .dpg-footer__grid
+        grid-template-columns: 1fr
+    .dpg-footer__contact
+        grid-column: auto

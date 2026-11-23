@@ -1,38 +1,28 @@
-// Style.sass code here
-
 $dpg-teal-dark: #073C44
 $dpg-teal:      #117569
 $dpg-yellow:    #FAC90D
 $dpg-white:     #FFFFFF
-// Secondary
 $dpg-orange:    #DC5828
 $dpg-green:     #6EB12D
-// Sirf banners ke liye (header / buttons / text me mat lagana)
 $dpg-red:       #AB1E23
 
-// Text colours
-$hcolor:        $dpg-teal-dark      // headings
-$pcolor:        $dpg-teal-dark      // paragraph / body text
-$brandcolor:    $dpg-teal           // main brand colour
+$hcolor:        $dpg-teal-dark      
+$pcolor:        $dpg-teal-dark      
+$brandcolor:    $dpg-teal           
 $linkcolor:     $dpg-teal-dark
 $linkhover:     $dpg-teal
 
-// ---------- 2. FONTS ----------
-// Guidebook: Sans-serif = Oswald | Serif = Libre Baskerville (Regular, Bold, Italic)
 $fontOswald:     'Oswald', sans-serif
 $fontBaskerville:'Libre Baskerville', serif
-$fontHeading:    $fontOswald          // h1-h6, menu, buttons, address
-$fontBody:       $fontBaskerville     // paragraph (chahiye to $fontOswald kar do)
+$fontHeading:    $fontOswald          
+$fontBody:       $fontBaskerville     
 
-// ---------- 2b. BREAKPOINTS (Bootstrap 5 ke same) ----------
 $bp-sm:  576px
 $bp-md:  768px
 $bp-lg:  992px
 $bp-xl:  1200px
 $bp-xxl: 1400px
 
-// ---------- 3. BOOTSTRAP 5 OVERRIDES ----------
-// (agar Bootstrap ka sass source import kar rahe ho to ye lines uske pehle rakho)
 $primary:   $dpg-teal-dark
 $secondary: $dpg-teal
 $success:   $dpg-green
@@ -45,18 +35,13 @@ $headings-font-family:   $fontHeading
 $headings-color:         $hcolor
 $link-color:             $linkcolor
 $link-hover-color:       $linkhover
-// @import "bootstrap/scss/bootstrap"   <- yahan aayega
 
-// CDN Bootstrap ke liye bhi chalne wale variables
 :root
     --bs-body-font-family: #{$fontBody}
     --bs-body-color: #{$pcolor}
     --bs-link-color: #{$linkcolor}
     --bs-link-hover-color: #{$linkhover}
 
-// ---------- 4. BASE TYPOGRAPHY ----------
-// Font body par ek baar set karo, baaki sab inherit karenge.
-// NOTE: 'i' tag me font-family mat lagana, warna Bootstrap Icons / Font Awesome ke icons toot jate hain.
 body
     font-family: $fontBody
     color: $pcolor
@@ -79,7 +64,7 @@ p
     color: $pcolor
 
 ul
-    padding-left: 0
+    padding-left: 0px !important
     margin-bottom: 0
     list-style: none
 
@@ -90,20 +75,20 @@ a
     color: $linkcolor
     text-decoration: none
     transition: color .2s
+    text-decoration: none !important
     &:hover
         color: $linkhover
 
-// Headings jaisa font chahiye wahan (menu, buttons, labels)
 .font-heading
     font-family: $fontHeading
 .font-body
     font-family: $fontBody
 
-// ---------- 5. BACKGROUND UTILITIES ----------
+
 .bg-teal-dark
     background: $dpg-teal-dark
     color: $dpg-white
-.bg-blue            // purana class, ab brand teal
+.bg-blue            
     background: $brandcolor
     color: $dpg-white
 .bg-teal
@@ -118,13 +103,13 @@ a
 .bg-green
     background: $dpg-green
     color: $dpg-white
-.bg-banner-red      // sirf banners
+.bg-banner-red      
     background: $dpg-red
     color: $dpg-white
-.bg-cream           // purana #f9f2eb wala soft background (brand colour nahi, sections ke liye)
+.bg-cream           
     background: #f9f2eb
 
-// ---------- 6. TEXT UTILITIES ----------
+
 .text-teal-dark
     color: $dpg-teal-dark
 .text-teal
@@ -136,7 +121,7 @@ a
 .text-green
     color: $dpg-green
 
-// ---------- 7. BUTTONS ----------
+
 .btn-dpg
     background: $dpg-yellow
     color: $dpg-teal-dark
@@ -148,6 +133,7 @@ a
     border-radius: 50rem
     padding: .6rem 1.6rem
     transition: .2s
+    text-decoration: none !important
     &:hover
         background: $dpg-teal-dark
         color: $dpg-yellow

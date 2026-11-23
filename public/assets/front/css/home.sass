@@ -16,14 +16,13 @@
         right: 20px !important
         left: auto!important
 
-
-$marquee-speed: 35s   
+$marquee-speed: 35s
 
 @keyframes dpg-marquee
     from
         transform: translateX(0)
     to
-        transform: translateX(-50%)   // 2 same groups hain, isliye 50%
+        transform: translateX(-50%) // 2 same groups hain, isliye 50%
 
 .dpg-marquee
     font-family: $fontHeading
@@ -64,14 +63,14 @@ $marquee-speed: 35s
         font-size: 1rem
 
     &__text
-        color: rgba($dpg-white, .80)
-        font-size: .875rem
+        color: rgba($dpg-white, .90)
+        font-size: 1.1rem
         font-weight: 500
 
     &__link
         border: 1px solid $dpg-yellow
         color: $dpg-yellow
-        font-size: .75rem
+        font-size: .85rem
         font-weight: 600
         letter-spacing: .3px
         text-decoration: none
@@ -87,18 +86,15 @@ $marquee-speed: 35s
         background: rgba($dpg-yellow, .40)
         flex-shrink: 0
 
-
 @media (max-width: #{$bp-sm - .02px})
     .dpg-marquee__title
         font-size: 1rem
-
 
 @media (prefers-reduced-motion: reduce)
     .dpg-marquee__bar
         overflow-x: auto
     .dpg-marquee__track
         animation: none
-
 
 .dpg-stats
     padding: 3rem 0
@@ -181,7 +177,6 @@ $marquee-speed: 35s
         letter-spacing: .3px
         color: rgba($dpg-white, .92)
 
-
 @media (max-width: #{$bp-lg - .02px})
     .dpg-stats
         padding: 2rem 0
@@ -204,20 +199,11 @@ $marquee-speed: 35s
         &__label
             font-size: .95rem
 
-// Jinhe animation pasand nahi: hover zoom band
 @media (prefers-reduced-motion: reduce)
     .dpg-stats__tile::before
         transition: none
     .dpg-stats__tile:hover::before
         transform: none
-
-
-
-// ================================================================
-// NEW SECTIONS  →  home.sass ke sabse neeche paste karo.
-// (pichla home_append.sass poora hata kar ye paste karna)
-// Existing code me kuch change nahi. style.sass bhi untouched.
-// ================================================================
 
 $dpg-ink: rgba($dpg-teal-dark, .72)
 $dpg-soft: #F3F8F7
@@ -240,8 +226,6 @@ $dpg-strip-speed: 40s
     100%
         box-shadow: 0 0 0 0 rgba($dpg-yellow, 0)
 
-
-// ================= SHARED =================
 .dpg-i
     width: 1em
     height: 1em
@@ -304,7 +288,7 @@ $dpg-strip-speed: 40s
 
     &__sub
         font-family: $fontBody
-        color: $dpg-ink
+        color: #000
 
     &--left
         margin: 0 0 2.25rem
@@ -323,7 +307,7 @@ $dpg-strip-speed: 40s
     margin-bottom: 1.25rem
     padding-left: .8rem
     border-left: 4px solid $dpg-yellow
-    font-family: $fontBaskerville
+    font-family: $fontHeading
     font-size: 1.6rem
     font-weight: 700
     line-height: 1.1
@@ -553,7 +537,6 @@ $dpg-strip-speed: 40s
             margin: -30px 0 0 -30px
             font-size: 1.4rem
 
-
 // ================= 1. ABOUT =================
 .dpg-about
     &__grid
@@ -601,7 +584,7 @@ $dpg-strip-speed: 40s
     &__text
         font-family: $fontBody
         line-height: 1.85
-        color: $dpg-ink
+        color: #000
     &__pills
         display: flex
         flex-wrap: wrap
@@ -612,19 +595,21 @@ $dpg-strip-speed: 40s
             border: 1px solid $dpg-line
             border-radius: 50rem
             background: $dpg-soft
-            font-size: .85rem
+            font-size: 1rem
             font-weight: 500
             color: $dpg-teal-dark
 
-
-// ================= 2. COVERFLOW =================
 .dpg-flow
     background: linear-gradient(180deg, $dpg-teal-dark 0%, #0A4B52 100%)
     overflow: hidden
+    width: 100%
     &__wrap
         position: relative
+        width: 100%
+        max-width: none
     &__stage
         position: relative
+        width: 100%
         height: 460px
         perspective: 1600px
         overflow: hidden
@@ -679,8 +664,6 @@ $dpg-strip-speed: 40s
         &--next
             right: 0
 
-
-// ================= 3. PLACEMENT =================
 .dpg-career
     display: grid
     grid-template-columns: repeat(5, 1fr)
@@ -715,7 +698,8 @@ $dpg-strip-speed: 40s
         color: $dpg-yellow
     &__label
         margin-top: .4rem
-        font-size: .9rem
+        font-size: 1rem
+        font-family: $fontBaskerville
         color: rgba($dpg-white, .9)
 
 .dpg-place
@@ -811,8 +795,6 @@ $dpg-strip-speed: 40s
             max-height: 100%
             object-fit: contain
 
-
-// ================= 4. SUCCESS STORIES =================
 .dpg-tabs
     &__nav
         display: flex
@@ -872,8 +854,6 @@ $dpg-strip-speed: 40s
         font-weight: 600
         color: $dpg-teal-dark
 
-
-// ================= 5. HAPPENINGS + PRESS =================
 .dpg-happen
     &__grid
         display: grid
@@ -888,15 +868,17 @@ $dpg-strip-speed: 40s
         border-radius: .6rem
     &__title
         margin: 1.1rem 0 .4rem
-        font-family: $fontBody
-        font-size: 1.1rem
+        font-family: $fontHeading
+        font-size: 1.4rem
         font-weight: 700
         line-height: 1.5
         color: $dpg-teal-dark
     &__text
-        font-size: .92rem
+        font-size: 1rem
         line-height: 1.7
-        color: $dpg-ink
+        color: #000
+        font-family: $fontBaskerville
+
     &__btns
         display: flex
         gap: .7rem
@@ -915,9 +897,11 @@ $dpg-strip-speed: 40s
         border-radius: .8rem
         background: rgba($dpg-white, .55)
         transition: .2s
+        text-decoration: none !important
         &:hover
             background: $dpg-white
             box-shadow: $dpg-shadow
+            text-decoration: underline !important
     &__logo
         display: grid
         place-items: center
@@ -932,10 +916,10 @@ $dpg-strip-speed: 40s
         line-height: 1.2
         color: $dpg-teal
     &__text
-        font-size: .88rem
+        font-size: 1rem
         line-height: 1.5
         color: $dpg-teal-dark
-
+        font-family: $fontHeading
 
 // ================= 6. CAMPUS BUZZ =================
 .dpg-buzz
@@ -975,7 +959,6 @@ $dpg-strip-speed: 40s
             font-size: 2rem
             color: $dpg-white
 
-
 // ================= 7. 360 TOUR =================
 .dpg-tour
     position: relative
@@ -1013,7 +996,6 @@ $dpg-strip-speed: 40s
             font-size: .9rem
             color: $dpg-white
 
-
 // ================= 8. SCHOOLS + EVENTS =================
 .dpg-schools
     &__grid
@@ -1024,6 +1006,7 @@ $dpg-strip-speed: 40s
         overflow: hidden
         border-radius: 1.1rem
         box-shadow: $dpg-shadow
+        background: $dpg-teal-dark
     &__slide
         position: relative
         display: flex
@@ -1073,7 +1056,8 @@ $dpg-strip-speed: 40s
             font-weight: 500
             color: $dpg-teal-dark
         em
-            font-size: .82rem
+            font-size: 0.88rem
+            font-family: $fontBody
             font-style: normal
             color: $dpg-ink
     &__date
@@ -1094,7 +1078,6 @@ $dpg-strip-speed: 40s
             line-height: 1
             color: $dpg-white
 
-
 // ================= 9. RESEARCH =================
 .dpg-research
     &__grid
@@ -1113,7 +1096,7 @@ $dpg-strip-speed: 40s
             transform: translateY(-5px)
         p
             margin-top: .4rem
-            font-size: .95rem
+            font-size: 1.3rem
             color: $dpg-ink
     &__icon
         display: inline-grid
@@ -1130,7 +1113,6 @@ $dpg-strip-speed: 40s
         font-weight: 700
         line-height: 1
         color: $dpg-teal-dark
-
 
 // ================= 10. PERSONALITIES =================
 .dpg-people
@@ -1159,7 +1141,7 @@ $dpg-strip-speed: 40s
     &__info
         padding: .9rem 1.1rem 1.1rem
         background: linear-gradient(180deg, rgba(0, 0, 0, .15), rgba(0, 0, 0, .55))
-        h4
+        h3
             margin: 0
             font-size: 1.05rem
             color: $dpg-white
@@ -1168,7 +1150,6 @@ $dpg-strip-speed: 40s
             letter-spacing: .06em
             text-transform: uppercase
             color: rgba($dpg-white, .78)
-
 
 // ================= 11. STAR ALUMNI =================
 .dpg-star
@@ -1220,7 +1201,6 @@ $dpg-strip-speed: 40s
             font-size: .92rem
             color: $dpg-yellow
 
-
 // ================= 12. EXPERT VOICES =================
 .dpg-voices
     background: linear-gradient(135deg, $dpg-teal-dark, #0A4B52)
@@ -1236,7 +1216,6 @@ $dpg-strip-speed: 40s
         p
             font-size: .85rem
             color: rgba($dpg-white, .78)
-
 
 // ================= 13. TESTIMONIALS =================
 .dpg-testi
@@ -1284,7 +1263,6 @@ $dpg-strip-speed: 40s
         line-height: 1.8
         color: $dpg-ink
 
-
 // ================= 14. COLLABORATIONS =================
 .dpg-collab
     &__card
@@ -1307,7 +1285,6 @@ $dpg-strip-speed: 40s
             font-size: 1rem
             font-weight: 500
             color: $dpg-white
-
 
 // ================= 15. ECOSYSTEM =================
 .dpg-eco
@@ -1343,7 +1320,6 @@ $dpg-strip-speed: 40s
             font-size: .92rem
             color: rgba($dpg-white, .88)
 
-
 // ================= 16. BLOG =================
 .dpg-blog
     &__grid
@@ -1370,8 +1346,9 @@ $dpg-strip-speed: 40s
             line-height: 1.3
             color: $dpg-teal-dark
         p
-            font-size: .95rem
-            color: $dpg-ink
+            font-size: 1rem
+            color: #000
+            font-family: $fontBaskerville
         &:hover h3
             color: $dpg-teal
     &__tag
@@ -1390,9 +1367,9 @@ $dpg-strip-speed: 40s
         border-radius: 1rem
         background: $dpg-white
         box-shadow: $dpg-shadow
-        h4
+        h3
             margin-bottom: 1rem
-            font-size: 1.15rem
+            font-size: 1.3rem
             color: $dpg-teal-dark
         a
             display: flex
@@ -1400,11 +1377,21 @@ $dpg-strip-speed: 40s
             gap: .9rem
             padding: .7rem 0
             border-top: 1px solid $dpg-line
-            font-size: .95rem
+            font-size: 1rem
             line-height: 1.4
             color: $dpg-teal-dark
             &:hover
                 color: $dpg-teal
+        .dpg-btn-sm
+            display: inline-block !important
+            padding: 0.55rem 1.4rem !important
+            border: 1px solid #073C44 !important
+            border-radius: 0.4rem !important
+            background: #073C44 !important
+            color: #FFFFFF !important
+            font-size: 0.95rem !important
+            transition: 0.2s !important
+
         img
             flex: 0 0 64px
             width: 64px
@@ -1412,8 +1399,6 @@ $dpg-strip-speed: 40s
             object-fit: cover
             border-radius: .6rem
 
-
-// ================= 17. LEGACY + UNIVERSE =================
 .dpg-legacy
     background: linear-gradient(135deg, #062F36, $dpg-teal-dark)
     color: rgba($dpg-white, .85)
@@ -1432,8 +1417,7 @@ $dpg-strip-speed: 40s
         font-size: clamp(1.9rem, 3.2vw, 2.7rem)
         color: $dpg-white
     &__img
-        padding: .6rem
-        border: 1px solid rgba($dpg-yellow, .45)
+        padding: .2rem
         border-radius: 1.2rem
         img
             display: block
@@ -1465,20 +1449,18 @@ $dpg-strip-speed: 40s
         border: 1px solid rgba($dpg-white, .18)
         border-radius: .8rem
         background: rgba($dpg-white, .06)
-        font-size: .95rem
+        font-size: 1.3rem
         font-weight: 500
         color: $dpg-white
 
-
-// ================= 18. FAQ =================
 .dpg-faq
     &__list
-        max-width: 900px
+        max-width: 100%
     &__item
         margin-bottom: .9rem
         border: 1px solid $dpg-line
         border-radius: .9rem
-        background: $dpg-white
+        background: $dpg-teal-dark
         box-shadow: 0 4px 14px rgba($dpg-teal-dark, .05)
         summary
             display: flex
@@ -1486,9 +1468,9 @@ $dpg-strip-speed: 40s
             justify-content: space-between
             gap: 1rem
             padding: 1.1rem 1.4rem
-            font-size: 1.1rem
+            font-size: 1.3rem
             font-weight: 500
-            color: $dpg-teal-dark
+            color: #fff
             cursor: pointer
             list-style: none
             &::-webkit-details-marker
@@ -1509,10 +1491,10 @@ $dpg-strip-speed: 40s
         p
             padding: 0 1.4rem 1.3rem
             font-family: $fontBody
-            font-size: .95rem
+            font-size: 1rem
             line-height: 1.8
-            color: $dpg-ink
-
+            color: #f9f9f9
+            
 
 // ================= 19. CTA =================
 .dpg-cta
@@ -1553,171 +1535,6 @@ $dpg-strip-speed: 40s
             &:hover
                 background: $dpg-teal-dark
                 color: $dpg-yellow
-
-
-// ================= 20. FOOTER =================
-.dpg-footer
-    position: relative
-    font-family: $fontHeading
-    background: $dpg-teal-dark
-    color: rgba($dpg-white, .82)
-
-    &__news
-        display: flex
-        flex-wrap: wrap
-        align-items: center
-        justify-content: space-between
-        gap: 1.5rem
-        padding: 2.5rem 0
-        border-bottom: 1px solid rgba($dpg-white, .12)
-        h3
-            margin: 0 0 .2rem
-            font-size: 1.5rem
-            color: $dpg-white
-        p
-            color: rgba($dpg-white, .75)
-
-    &__form
-        display: flex
-        width: min(100%, 440px)
-        input
-            flex: 1
-            min-width: 0
-            padding: .75rem 1.1rem
-            border: 1px solid rgba($dpg-white, .25)
-            border-right: 0
-            border-radius: 50rem 0 0 50rem
-            background: rgba($dpg-white, .08)
-            color: $dpg-white
-            outline: 0
-            &::placeholder
-                color: rgba($dpg-white, .6)
-        button
-            padding: .75rem 1.5rem
-            border: 0
-            border-radius: 0 50rem 50rem 0
-            background: $dpg-yellow
-            color: $dpg-teal-dark
-            font-weight: 600
-            text-transform: uppercase
-            letter-spacing: .5px
-
-    &__grid
-        display: grid
-        grid-template-columns: repeat(4, 1fr)
-        gap: 2.5rem 2rem
-        padding: 3.5rem 0 2.5rem
-
-    &__title
-        position: relative
-        margin-bottom: 1.3rem
-        padding-bottom: .8rem
-        font-family: $fontBaskerville
-        font-size: 1.2rem
-        color: $dpg-white
-        &::after
-            content: ""
-            position: absolute
-            left: 0
-            bottom: 0
-            width: 36px
-            height: 3px
-            border-radius: 3px
-            background: $dpg-yellow
-
-    &__list
-        li
-            margin-bottom: .55rem
-        a
-            display: inline-block
-            font-size: .95rem
-            font-weight: 300
-            letter-spacing: .3px
-            color: rgba($dpg-white, .78)
-            transition: .2s
-            &:hover
-                padding-left: .3rem
-                color: $dpg-yellow
-
-    &__contact
-        grid-column: span 2
-
-    &__item
-        display: flex
-        gap: .9rem
-        margin-bottom: 1.1rem
-        font-size: .95rem
-        line-height: 1.7
-        i
-            display: grid
-            place-items: center
-            flex: 0 0 40px
-            height: 40px
-            border-radius: 50%
-            background: $dpg-white
-            color: $dpg-teal-dark
-            font-size: 1.1rem
-        a
-            color: $dpg-yellow
-            &:hover
-                color: $dpg-white
-
-    &__map
-        height: 150px
-        overflow: hidden
-        border: 1px solid rgba($dpg-white, .15)
-        border-radius: .8rem
-        iframe
-            width: 100%
-            height: 100%
-            border: 0
-
-    &__brand
-        display: flex
-        flex-wrap: wrap
-        align-items: center
-        justify-content: space-between
-        gap: 1.2rem
-        padding: 1.8rem 0 2rem
-        border-top: 1px solid rgba($dpg-white, .12)
-
-    &__logo
-        display: flex
-        align-items: center
-        gap: 1rem
-        font-size: .95rem
-        img
-            height: 56px
-            width: auto
-            padding: .3rem .6rem
-            border-radius: .6rem
-            background: $dpg-white
-
-    &__social
-        display: flex
-        gap: .6rem
-        a
-            display: grid
-            place-items: center
-            width: 40px
-            height: 40px
-            border: 1px solid rgba($dpg-white, .25)
-            border-radius: 50%
-            color: $dpg-white
-            transition: .2s
-            &:hover
-                background: $dpg-yellow
-                border-color: $dpg-yellow
-                color: $dpg-teal-dark
-
-    &__bar
-        padding: 1.2rem 0
-        background: rgba(0, 0, 0, .22)
-        font-size: .875rem
-        color: rgba($dpg-white, .7)
-        a
-            color: $dpg-yellow
-
 
 // ================= RESPONSIVE =================
 @media (max-width: #{$bp-xl - .02px})

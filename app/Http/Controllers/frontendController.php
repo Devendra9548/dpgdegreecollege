@@ -37,10 +37,7 @@ class frontendController extends Controller
     }
 
     function about(){
-        $pageseo = PageSeo::where('pagename', 'about')->get();
-        $homepageseo = PageSeo::where('pagename', 'about')->get();
-        $gseo = GlobalSeo::find(1);
-        return view('front.about', ['pageseo'=>$pageseo,'gseo'=>$gseo,'homepageseo'=>$homepageseo]);
+        return view('front.about');
     }
 
     function blogs(){
