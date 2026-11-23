@@ -293,7 +293,7 @@ a:hover {
   font-family: "Oswald", sans-serif;
 }
 .dpg-marquee__bar {
-  background: #117569;
+  background: #00346d;
   overflow: hidden;
 }
 .dpg-marquee__track {
@@ -581,15 +581,17 @@ a:hover {
   font-size: clamp(1.9rem, 3.4vw, 2.8rem);
   font-weight: 600;
   color: #073C44;
+  font-family: "Oswald", sans-serif;
 }
 .dpg-head__title--serif {
-  font-family: "Libre Baskerville", serif;
-  font-weight: 700;
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-family: "Oswald", sans-serif;
+  margin: 0.6rem 0 0.8rem;
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  font-weight: 600;
 }
 .dpg-head__title--gold {
   color: #FAC90D;
-  font-family: "Libre Baskerville", serif;
+  font-family: "Oswald", sans-serif;
 }
 .dpg-head__title span {
   color: #FAC90D;
@@ -617,8 +619,8 @@ a:hover {
   padding-left: 0.8rem;
   border-left: 4px solid #FAC90D;
   font-family: "Oswald", sans-serif;
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  font-weight: 600;
   line-height: 1.1;
   color: #073C44;
 }
@@ -932,9 +934,11 @@ a:hover {
   font-weight: 700;
 }
 .dpg-about__title {
-  margin: 0.6rem 0 1rem;
-  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  margin: 0.6rem 0 0.8rem;
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  font-weight: 600;
   color: #073C44;
+  font-family: "Oswald", sans-serif;
 }
 .dpg-about__text {
   font-family: "Libre Baskerville", serif;
@@ -958,7 +962,7 @@ a:hover {
 }
 
 .dpg-flow {
-  background: linear-gradient(180deg, #073C44 0%, #0A4B52 100%);
+  background: #117569;
   overflow: hidden;
   width: 100%;
 }
@@ -1389,7 +1393,7 @@ a:hover {
 .dpg-tour {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #073C44 0%, #0A4B52 60%, #117569 150%);
+  background: linear-gradient(135deg, #073C44 0%, #0A4B52 60%, #117569 150%) !important;
 }
 .dpg-tour::before {
   content: "";
@@ -1564,12 +1568,13 @@ a:hover {
 
 .dpg-people {
   background: linear-gradient(180deg, #0A4B52, #073C44);
+  background: #00346d;
 }
 .dpg-people__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem 2rem;
-  max-width: 1000px;
+  max-width: 100%;
   margin: 0 auto;
 }
 .dpg-people__card {
@@ -1594,17 +1599,26 @@ a:hover {
 .dpg-people__info {
   padding: 0.9rem 1.1rem 1.1rem;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.55));
+  text-align: center;
 }
 .dpg-people__info h3 {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
   color: #FFFFFF;
 }
 .dpg-people__info span {
+  display: block;
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.78);
+}
+.dpg-people__info a {
+  font-size: 0.8rem !important;
+  display: inline-block;
+  margin: 10px 0px;
+  padding: 5px 18px !important;
 }
 
 .dpg-star__grid {
@@ -1674,12 +1688,15 @@ a:hover {
 }
 .dpg-voices__grid h4 {
   margin: 1rem 0 0.15rem;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   color: #FFFFFF;
+  margin-bottom: 10px;
+  margin-top: 20px !important;
 }
 .dpg-voices__grid p {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.78);
+  font-size: 1rem;
+  font-family: "Libre Baskerville", serif;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .dpg-testi__grid {
@@ -1729,9 +1746,10 @@ a:hover {
 }
 .dpg-testi__text {
   font-family: "Libre Baskerville", serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.8;
-  color: rgba(7, 60, 68, 0.72);
+  color: #000;
+  font-style: italic;
 }
 
 .dpg-collab__card {
@@ -1753,13 +1771,14 @@ a:hover {
   background: linear-gradient(180deg, transparent 40%, rgba(7, 60, 68, 0.92));
 }
 .dpg-collab__card span {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #FFFFFF;
 }
 
 .dpg-eco {
   background: linear-gradient(135deg, #073C44, #0A4B52);
+  background: #00346d;
 }
 .dpg-eco__grid {
   display: grid;
@@ -1792,9 +1811,11 @@ a:hover {
   margin: 0 0 0.4rem;
   font-size: 1.5rem;
   color: #FAC90D;
+  font-family: "Oswald", sans-serif;
 }
 .dpg-eco__card p {
-  font-size: 0.92rem;
+  font-size: 1rem;
+  font-family: "Libre Baskerville", serif;
   color: rgba(255, 255, 255, 0.88);
 }
 
@@ -1963,7 +1984,7 @@ a:hover {
   margin-bottom: 0.9rem;
   border: 1px solid rgba(7, 60, 68, 0.1);
   border-radius: 0.9rem;
-  background: #073C44;
+  background: #117569;
   box-shadow: 0 4px 14px rgba(7, 60, 68, 0.05);
 }
 .dpg-faq__item summary {
@@ -1988,8 +2009,8 @@ a:hover {
   flex: 0 0 30px;
   height: 30px;
   border-radius: 50%;
-  background: #073C44;
-  color: #FAC90D;
+  background: #FAC90D;
+  color: #073C44;
   font-size: 1.3rem;
   line-height: 1;
 }

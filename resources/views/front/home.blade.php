@@ -175,8 +175,6 @@ $banners=[
 <section class="dpg-marquee bg-white">
     <div class="dpg-marquee__bar py-3">
         <div class="dpg-marquee__track d-flex align-items-center flex-nowrap">
-
-            <!-- Group 1 -->
             <div class="dpg-marquee__group d-flex align-items-center flex-shrink-0">
                 <div class="dpg-marquee__item d-flex align-items-center gap-3 mx-3 px-4 py-2 rounded-3">
                     <span class="dpg-marquee__tag rounded-pill px-3 py-1">Admission Open</span>
@@ -212,8 +210,6 @@ $banners=[
                 </div>
                 <span class="dpg-marquee__divider"></span>
             </div>
-
-            <!-- Group 2 (exact copy of Group 1, seamless loop ke liye - isko mat hatana) -->
             <div class="dpg-marquee__group d-flex align-items-center flex-shrink-0" aria-hidden="true">
                 <div class="dpg-marquee__item d-flex align-items-center gap-3 mx-3 px-4 py-2 rounded-3">
                     <span class="dpg-marquee__tag rounded-pill px-3 py-1">Admission Open</span>
@@ -370,7 +366,8 @@ $banners=[
     $testimonials = [
         ['Priya Kataria', 'B.A - 1st Year',  'The environment of the college is serene and tranquil. Faculty is approachable and the overall experience has been delightful.', '/assets/front/imgs/testimonials/1.jpg'],
         ['Gavia',         'B.Sc - 2nd Year', 'DPG Degree College teachers make us love our subjects. Infrastructure is amazing and the environment is excellent.', '/assets/front/imgs/testimonials/2.jpg'],
-        ['Student Name',  'B.Com - 3rd Year', 'Add your student feedback here.', '/assets/front/imgs/testimonials/3.jpg'],
+        ['Priya Kataria', 'B.A - 1st Year',  'The environment of the college is serene and tranquil. Faculty is approachable and the overall experience has been delightful.', '/assets/front/imgs/testimonials/1.jpg'],
+        
     ];
 
     $collabs = [ ['Partner Institution', 27], ['Partner Institution', 28], ['Partner Institution', 29], ['Partner Institution', 30], ['Partner Institution', 31] ];
@@ -379,7 +376,7 @@ $banners=[
 
     $blogs = [ ['Career Opportunities After B.Com', 18], ['How to Choose the Right Course After 12th', 20], ['Why NAAC Accreditation Matters', 22], ['Scholarship Schemes for Students', 24] ];
 
-    $universe = [ 'Technology', 'Management', 'DPG Institution', 'DPG Institution', 'DPG Institution' ];
+    $universe = [ 'DPG Degree College', 'DPG Polytechnic', 'DPG Law College', 'DPG Pharmacy', 'DPG School of Technology and Management' ];
 
     $faqs = [
         ['Is DPG Degree College recognised?', 'DPG Degree College is an autonomous college approved by AICTE and NCTE, affiliated to MDU Rohtak, recognised under 2(f) by UGC and accredited with "A" grade by NAAC.'],
@@ -401,8 +398,7 @@ $banners=[
             <div>
                 <span class="dpg-head__eyebrow dpg-head__eyebrow--left">Welcome</span>
                 <h2 class="dpg-about__title">About DPG Degree College</h2>
-                <p class="dpg-about__text">At DPG Degree College, we pride ourselves on our unwavering commitment to academic excellence and holistic development, as evidenced by our esteemed Grade "A" accreditation from NAAC. An autonomous college approved by AICTE and NCTE, affiliated to MDU Rohtak and recognised under 2(f) by UGC.</p>
-                <div class="dpg-about__pills"><span>Autonomous</span><span>UGC 2(f)</span><span>AICTE &amp; NCTE</span><span>MDU Rohtak</span></div>
+                <p class="dpg-about__text">DPG Degree College is a leading institution for higher education imparting a comprehensive professional learning established in the year 2015. The institute offers robust learning atmosphere to its pupils to acquire and showcase finesse to achieve their professional goals and hence is considered to be one of the premier private degree colleges in Gurgaon.</p>
                 <a href="#" class="btn-dpg d-inline-flex align-items-center gap-2 mt-4">Read More <svg class="dpg-i"><use href="#i-arrow"/></svg></a>
             </div>
         </div>
@@ -542,7 +538,7 @@ $recruiters=[
     <div class="container">
         <div class="dpg-head">
             <span class="dpg-head__eyebrow">Placements</span>
-            <h2 class="dpg-head__title">Career Outcomes</h2>
+            <h2 class="dpg-head__title">Our Recruiters</h2>
             <p class="dpg-head__sub">DPG graduates continue to attract opportunities from leading recruiters.</p>
         </div>
 
@@ -619,7 +615,7 @@ $reviews=[
         <div class="dpg-head dpg-head--left">
             <span class="dpg-head__eyebrow dpg-head__eyebrow--left">Success Stories</span>
             <h2 class="dpg-head__title">Meet Our Top Achievers</h2>
-            <p class="dpg-head__sub">From ambition to achievement — real stories of DPG alumni who made it big.</p>
+            <p class="dpg-head__sub">From ambition to achievement - real stories of DPG alumni who made it big.</p>
         </div>
         <div class="dpg-tabs__nav">
             @foreach(array_keys($stories) as $i => $tab)
@@ -759,41 +755,9 @@ $newsltters=[
     </div>
 </section>
 
-<section class="dpg-sec dpg-schools">
-    <div class="container">
-        <div class="dpg-head dpg-head--left">
-            <span class="dpg-head__eyebrow dpg-head__eyebrow--left">Academics</span>
-            <h2 class="dpg-head__title">Explore Our Schools</h2>
-            <p class="dpg-head__sub">Diverse disciplines, one shared promise — excellence that meets the global standards of education.</p>
-        </div>
-        <div class="dpg-schools__grid">
-            <div class="dpg-fade dpg-schools__card" data-auto="4500">
-                <div class="dpg-fade__slides">
-                    @foreach($disc as $d)
-                    <div class="dpg-fade__slide dpg-schools__slide" style="--bg: url('{{ $b($d[1]) }}')">
-                        <div>
-                            <h3>School of {{ $d[0] }}</h3>
-                            <p>Explore programmes, faculty and facilities of the {{ $d[0] }} department.</p>
-                            <a href="#" class="dpg-place__know"><i><svg class="dpg-i"><use href="#i-arrow"/></svg></i> Explore</a>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-                <div class="dpg-fade__dots dpg-fade__dots--over">@foreach($disc as $k => $d)<button type="button" class="dpg-fade__dot" aria-label="Slide {{ $k + 1 }}"></button>@endforeach</div>
-            </div>
-            <aside class="dpg-events">
-                <h3>Upcoming Events</h3>
-                <ul>
-                    @foreach($events as $e)
-                    <li><span class="dpg-events__date"><b>{{ $e[0] }}</b>{{ $e[1] }}</span><span><strong>{{ $e[2] }}</strong><em>{{ $e[3] }}</em></span></li>
-                    @endforeach
-                </ul>
-                <div class="text-end"><a href="#" class="dpg-btn-sm">View all</a></div>
-            </aside>
-        </div>
-    </div>
-</section>
 
+
+<!-- 
 <section class="dpg-sec dpg-sec--soft dpg-research">
     <div class="container">
         <div class="dpg-head dpg-head--left">
@@ -811,66 +775,7 @@ $newsltters=[
             @endforeach
         </div>
     </div>
-</section>
-
-<?php 
-$ourteam=[
-    [
-        "name" => "Name Surname",
-        "position" => "Chairman",
-        "img" => "/assets/front/imgs/ourteams/1-1.jpeg"
-    ],
-    [
-        "name" => "Name Surname",
-        "position" => "Director",
-        "img" => "/assets/front/imgs/ourteams/1-2.jpeg"
-    ],
-    [
-        "name" => "Name Surname",
-        "position" => "Principal",
-        "img" => "/assets/front/imgs/ourteams/1-3.jpeg"
-    ],
-    [
-        "name" => "Name Surname",
-        "position" => "Vice Principal",
-        "img" => "/assets/front/imgs/ourteams/1-4.jpeg"
-    ],
-    [
-        "name" => "Name Surname",
-        "position" => "Dean Academics",
-        "img" => "/assets/front/imgs/ourteams/1-5.jpeg"
-    ],
-    [
-        "name" => "Name Surname",
-        "position" => "Head, Training & Placement",
-        "img" => "/assets/front/imgs/ourteams/1-1.jpeg"
-    ],
-
-];
-?>
-
-<section class="dpg-sec dpg-people">
-    <div class="container">
-        <div class="dpg-head dpg-head--light">
-            <h2 class="dpg-head__title dpg-head__title--gold">Distinguished Personalities</h2>
-        </div>
-        <div class="dpg-people__grid">
-            @foreach($ourteam as $ourteam)
-            <article class="dpg-people__card">
-                <div class="dpg-people__img">
-                    <span class="dpg-avatar">
-                        <img src="{{ $ourteam['img'] }}" alt="{{ $ourteam['name'] }}" loading="lazy">
-                    </span>
-                </div>
-                <div class="dpg-people__info">
-                    <h3>{{ $ourteam['name'] }}</h3>
-                    <span>{{ $ourteam['position'] }}</span>
-                </div>
-            </article>
-            @endforeach
-        </div>
-    </div>
-</section>
+</section> -->
 
 <section class="dpg-sec dpg-star">
     <div class="container">
@@ -886,6 +791,74 @@ $ourteam=[
             </div>
         </div>
         <div class="text-center mt-4"><a href="#" class="btn-dpg">Alumni Registration</a></div>
+    </div>
+</section>
+
+<?php 
+$ourteam=[
+    [
+        "name" => "Rajender Gahlot",
+        "position" => "Chairman",
+        "img" => "/assets/front/imgs/ourteams/chairman.jpg",
+        "url" => "/"
+    ],
+    [
+        "name" => "DR. S.S. BOKEN",
+        "position" => "PRINCIPAL",
+        "img" => "/assets/front/imgs/ourteams/DR-S-S-BOKEN.jpeg",
+        "url" => "/"
+    ],
+    [
+        "name" => "Dr. Priyanka Kumari",
+        "position" => "Dean Academics",
+        "img" => "/assets/front/imgs/ourteams/dean.jpg",
+        "url" => "/"
+    ],
+];
+?>
+
+<section class="dpg-sec dpg-people">
+    <div class="container">
+        <div class="dpg-head dpg-head--light">
+            <h2 class="dpg-head__title dpg-head__title--gold">Our Faculty</h2>
+        </div>
+        <div class="dpg-people__grid">
+            @foreach($ourteam as $ourteam)
+            <article class="dpg-people__card">
+                <div class="dpg-people__img">
+                    <span class="dpg-avatar">
+                        <img src="{{ $ourteam['img'] }}" alt="{{ $ourteam['name'] }}" loading="lazy">
+                    </span>
+                </div>
+                <div class="dpg-people__info">
+                    <h3>{{ $ourteam['name'] }}</h3>
+                    <span>{{ $ourteam['position'] }}</span>
+                    <a href="#" class="btn-dpg">Read More</a>
+                </div>
+            </article>
+            @endforeach
+        </div>
+    </div>
+    <div class="text-center mt-5"><a href="#" class="btn-dpg">View All Faculty</a></div>
+</section>
+
+<section class="dpg-sec dpg-sec--soft dpg-testi">
+    <div class="container">
+        <div class="dpg-head">
+            <span class="dpg-head__eyebrow">Voices</span>
+            <h2 class="dpg-head__title">Student Testimonials</h2>
+            <p class="dpg-head__sub">Real experiences, perspectives, and stories from our students.</p>
+        </div>
+        <div class="dpg-testi__grid">
+            @foreach($testimonials as $t)
+            <article class="dpg-testi__card">
+                <div class="dpg-testi__avatar"><span class="dpg-avatar" data-i="{{ mb_substr($t[0], 0, 1) }}"><img src="{{ $t[3] }}" alt="{{ $t[0] }}" loading="lazy" onerror="this.remove()"></span></div>
+                <h4 class="dpg-testi__name">{{ $t[0] }}</h4>
+                <p class="dpg-testi__course">{{ $t[1] }}</p>
+                <p class="dpg-testi__text">"{{ $t[2] }}"</p>
+            </article>
+            @endforeach
+        </div>
     </div>
 </section>
 
@@ -910,25 +883,7 @@ $ourteam=[
     </div>
 </section>
 
-<section class="dpg-sec dpg-sec--soft dpg-testi">
-    <div class="container">
-        <div class="dpg-head">
-            <span class="dpg-head__eyebrow">Voices</span>
-            <h2 class="dpg-head__title">Student Testimonials</h2>
-            <p class="dpg-head__sub">Real experiences, perspectives, and stories from our students.</p>
-        </div>
-        <div class="dpg-testi__grid">
-            @foreach($testimonials as $t)
-            <article class="dpg-testi__card">
-                <div class="dpg-testi__avatar"><span class="dpg-avatar" data-i="{{ mb_substr($t[0], 0, 1) }}"><img src="{{ $t[3] }}" alt="{{ $t[0] }}" loading="lazy" onerror="this.remove()"></span></div>
-                <h4 class="dpg-testi__name">{{ $t[0] }}</h4>
-                <p class="dpg-testi__course">{{ $t[1] }}</p>
-                <p class="dpg-testi__text">{{ $t[2] }}</p>
-            </article>
-            @endforeach
-        </div>
-    </div>
-</section>
+
 
 <section class="dpg-sec dpg-collab">
     <div class="container">
@@ -1000,8 +955,8 @@ $ourteam=[
             <div>
                 <span class="dpg-head__eyebrow dpg-head__eyebrow--left dpg-head__eyebrow--gold">Our Legacy</span>
                 <h2 class="dpg-legacy__title">A Legacy of Learning &amp; Leadership</h2>
-                <p>For years, DPG Degree College has been shaping young minds with quality education, strong values and a commitment to community. Our NAAC "A" accreditation reflects the trust students and parents place in us.</p>
-                <p>At DPG Degree College, we pride ourselves on our unwavering commitment to academic excellence and holistic development, as evidenced by our esteemed Grade "A" accreditation from NAAC. An autonomous college approved by AICTE and NCTE, affiliated to MDU Rohtak and recognised under 2(f) by UGC.</p>
+                <p class="dpg-about__text">At DPG Degree College, we pride ourselves on our unwavering commitment to academic excellence and holistic development, as evidenced by our esteemed Grade "A" accreditation from NAAC. An autonomous college approved by AICTE and NCTE, affiliated to MDU Rohtak and recognised under 2(f) by UGC.</p>
+                <div class="dpg-about__pills"><span>Autonomous</span><span>UGC 2(f)</span><span>AICTE &amp; NCTE</span><span>MDU Rohtak</span></div>
                 <a href="#" class="btn-dpg mt-4 d-inline-block">Read Our Story</a>
             </div>
             <div class="dpg-legacy__img"><img src="/assets/front/imgs/Artboard-1.webp" alt="DPG Degree College building" loading="lazy"></div>
@@ -1015,7 +970,6 @@ $ourteam=[
     </div>
 </section>
 
-{{-- 18 ===================== FAQ (Bennett) ===================== --}}
 <section class="dpg-sec dpg-faq">
     <div class="container">
         <div class="dpg-head dpg-head--left">
@@ -1034,10 +988,12 @@ $ourteam=[
     </div>
 </section>
 
-{{-- 19 ===================== ADMISSION CTA ===================== --}}
 <section class="dpg-cta">
     <div class="container dpg-cta__in">
-        <div><h2>Admissions Open · Session 2026-27</h2><p>Begin your journey with DPG Degree College today.</p></div>
+        <div>
+            <h2>Admissions Open · Session 2026-27</h2>
+            <p>Begin your journey with DPG Degree College today.</p>
+        </div>
         <div class="d-flex flex-wrap gap-3">
             <a href="#" class="dpg-cta__btn">Apply Now</a>
             <a href="tel:+919250008494" class="dpg-cta__btn dpg-cta__btn--line"><svg class="dpg-i"><use href="#i-phone"/></svg> +91-92500-08494</a>
