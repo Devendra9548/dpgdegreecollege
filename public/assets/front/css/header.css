@@ -131,7 +131,7 @@ a:hover {
   text-decoration: none !important;
 }
 .btn-dpg:hover {
-  background: #073C44;
+  background: #00346d;
   color: #FAC90D;
 }
 
@@ -219,6 +219,14 @@ a:hover {
   margin-top: 15px;
 }
 
+.dpg-sec-blue {
+  background: #00346d !important;
+}
+.dpg-sec-blue a:hover {
+  background: #DC5828 !important;
+  color: #fff !important;
+}
+
 @media only screen and (max-width: 768px) {
   .slider__control-line {
     left: 15px;
@@ -254,7 +262,7 @@ a:hover {
   }
 }
 .dpg-topbar {
-  background: #117569;
+  background: #00346d;
   color: #FFFFFF;
   font-family: "Oswald", sans-serif;
   font-size: 14px;
@@ -381,7 +389,7 @@ a:hover {
   color: #FFFFFF;
 }
 .dpg-header .btn-dpg:hover {
-  background: #117569;
+  background: #00346d;
   color: #FFFFFF;
 }
 .dpg-header .btn-search {

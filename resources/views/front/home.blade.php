@@ -439,7 +439,7 @@ $deparmentswithname=[
 ];
 ?>
 
-<section class="dpg-sec dpg-flow">
+<section class="dpg-sec dpg-flow dpg-sec-blue">
     <div class="container">
         <div class="dpg-head dpg-head--light">
             <h2 class="dpg-head__title dpg-head__title--serif">Multiple Disciplines, Infinite Possibilities</h2>
@@ -817,7 +817,7 @@ $ourteam=[
 ];
 ?>
 
-<section class="dpg-sec dpg-people">
+<section class="dpg-sec dpg-people dpg-sec-blue">
     <div class="container">
         <div class="dpg-head dpg-head--light">
             <h2 class="dpg-head__title dpg-head__title--gold">Our Faculty</h2>

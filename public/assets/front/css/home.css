@@ -132,7 +132,7 @@ a:hover {
   text-decoration: none !important;
 }
 .btn-dpg:hover {
-  background: #073C44;
+  background: #00346d;
   color: #FAC90D;
 }
 
@@ -218,6 +218,14 @@ a:hover {
   font-size: 12px;
   color: #24748c;
   margin-top: 15px;
+}
+
+.dpg-sec-blue {
+  background: #00346d !important;
+}
+.dpg-sec-blue a:hover {
+  background: #DC5828 !important;
+  color: #fff !important;
 }
 
 @media only screen and (max-width: 768px) {
@@ -651,9 +659,9 @@ a:hover {
 .dpg-btn-sm {
   display: inline-block;
   padding: 0.55rem 1.4rem;
-  border: 1px solid #073C44;
+  border: 1px solid #00346d;
   border-radius: 0.4rem;
-  background: #073C44;
+  background: #00346d;
   color: #FFFFFF;
   font-size: 0.95rem;
   transition: 0.2s;
@@ -962,7 +970,6 @@ a:hover {
 }
 
 .dpg-flow {
-  background: #117569;
   overflow: hidden;
   width: 100%;
 }
@@ -1211,12 +1218,12 @@ a:hover {
   background: #F3F8F7;
   font-size: 0.95rem;
   font-weight: 500;
-  color: #073C44;
+  color: #00346d;
   transition: 0.2s;
 }
 .dpg-tabs__btn.is-active, .dpg-tabs__btn:hover {
-  background: #073C44;
-  border-color: #073C44;
+  background: #00346d;
+  border-color: #00346d;
   color: #FFFFFF;
 }
 .dpg-tabs__panel {
@@ -1288,7 +1295,7 @@ a:hover {
   font-size: 1.4rem;
   font-weight: 700;
   line-height: 1.5;
-  color: #073C44;
+  color: #00346d;
 }
 .dpg-happen__text {
   font-size: 1rem;
@@ -1393,7 +1400,7 @@ a:hover {
 .dpg-tour {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #073C44 0%, #0A4B52 60%, #117569 150%) !important;
+  background: linear-gradient(135deg, #00346d 0%, #0A4B52 60%, #117569 150%) !important;
 }
 .dpg-tour::before {
   content: "";
@@ -1566,10 +1573,6 @@ a:hover {
   color: #073C44;
 }
 
-.dpg-people {
-  background: linear-gradient(180deg, #0A4B52, #073C44);
-  background: #00346d;
-}
 .dpg-people__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1678,7 +1681,7 @@ a:hover {
 }
 
 .dpg-voices {
-  background: linear-gradient(135deg, #073C44, #0A4B52);
+  background: linear-gradient(135deg, #00346d 0%, #0A4B52 60%, #117569 150%) !important;
 }
 .dpg-voices__grid {
   display: grid;
@@ -1846,7 +1849,7 @@ a:hover {
   margin: 0.7rem 0 0.5rem;
   font-size: 1.4rem;
   line-height: 1.3;
-  color: #073C44;
+  color: #00346d;
 }
 .dpg-blog__feat p {
   font-size: 1rem;
@@ -1854,7 +1857,7 @@ a:hover {
   font-family: "Libre Baskerville", serif;
 }
 .dpg-blog__feat:hover h3 {
-  color: #117569;
+  color: #DC5828;
 }
 .dpg-blog__tag {
   display: inline-block;
@@ -1884,10 +1887,10 @@ a:hover {
   align-items: center;
   gap: 0.9rem;
   padding: 0.7rem 0;
-  border-top: 1px solid rgba(7, 60, 68, 0.1);
+  border-top: 1px solid #00346d;
   font-size: 1rem;
   line-height: 1.4;
-  color: #073C44;
+  color: #00346d;
 }
 .dpg-blog__list a:hover {
   color: #117569;
@@ -1895,12 +1898,17 @@ a:hover {
 .dpg-blog__list .dpg-btn-sm {
   display: inline-block !important;
   padding: 0.55rem 1.4rem !important;
-  border: 1px solid #073C44 !important;
+  border: 1px solid #00346d;
   border-radius: 0.4rem !important;
-  background: #073C44 !important;
-  color: #FFFFFF !important;
+  background: #00346d;
+  color: #FFFFFF;
   font-size: 0.95rem !important;
   transition: 0.2s !important;
+}
+.dpg-blog__list .dpg-btn-sm:hover {
+  background: #DC5828 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #DC5828;
 }
 .dpg-blog__list img {
   flex: 0 0 64px;
@@ -1912,8 +1920,12 @@ a:hover {
 }
 
 .dpg-legacy {
-  background: linear-gradient(135deg, #062F36, #073C44);
+  background: linear-gradient(135deg, #00346d 0%, #0A4B52 60%, #117569 150%) !important;
   color: rgba(255, 255, 255, 0.85);
+}
+.dpg-legacy .btn-dpg:hover {
+  background: #DC5828 !important;
+  color: #fff !important;
 }
 .dpg-legacy__grid {
   display: grid;

@@ -338,9 +338,9 @@ $dpg-strip-speed: 40s
 .dpg-btn-sm
     display: inline-block
     padding: .55rem 1.4rem
-    border: 1px solid $dpg-teal-dark
+    border: 1px solid $dpg-blue
     border-radius: .4rem
-    background: $dpg-teal-dark
+    background: $dpg-blue
     color: $dpg-white
     font-size: .95rem
     transition: .2s
@@ -604,7 +604,6 @@ $dpg-strip-speed: 40s
             color: $dpg-teal-dark
 
 .dpg-flow
-    background: $dpg-teal
     overflow: hidden
     width: 100%
     &__wrap
@@ -812,12 +811,12 @@ $dpg-strip-speed: 40s
         background: $dpg-soft
         font-size: .95rem
         font-weight: 500
-        color: $dpg-teal-dark
+        color: $dpg-blue
         transition: .2s
         &.is-active,
         &:hover
-            background: $dpg-teal-dark
-            border-color: $dpg-teal-dark
+            background: $dpg-blue
+            border-color: $dpg-blue
             color: $dpg-white
     &__panel
         display: none
@@ -876,7 +875,7 @@ $dpg-strip-speed: 40s
         font-size: 1.4rem
         font-weight: 700
         line-height: 1.5
-        color: $dpg-teal-dark
+        color: $dpg-blue
     &__text
         font-size: 1rem
         line-height: 1.7
@@ -965,7 +964,7 @@ $dpg-strip-speed: 40s
 .dpg-tour
     position: relative
     overflow: hidden
-    background: linear-gradient(135deg, $dpg-teal-dark 0%, #0A4B52 60%, $dpg-teal 150%) !important
+    background: linear-gradient(135deg, #00346d 0%, #0A4B52 60%, #117569 150%) !important
     &::before
         content: ""
         position: absolute
@@ -1117,8 +1116,6 @@ $dpg-strip-speed: 40s
         color: $dpg-teal-dark
 
 .dpg-people
-    background: linear-gradient(180deg, #0A4B52, $dpg-teal-dark)
-    background: $dpg-blue
     &__grid
         display: grid
         grid-template-columns: repeat(3, 1fr)
@@ -1211,7 +1208,7 @@ $dpg-strip-speed: 40s
             color: $dpg-yellow
 
 .dpg-voices
-    background: linear-gradient(135deg, $dpg-teal-dark, #0A4B52)
+    background: linear-gradient(135deg, #00346d 0%, #0A4B52 60%, #117569 150%) !important
     &__grid
         display: grid
         grid-template-columns: repeat(3, 1fr)
@@ -1357,13 +1354,13 @@ $dpg-strip-speed: 40s
             margin: .7rem 0 .5rem
             font-size: 1.4rem
             line-height: 1.3
-            color: $dpg-teal-dark
+            color: $dpg-blue
         p
             font-size: 1rem
             color: #000
             font-family: $fontBaskerville
         &:hover h3
-            color: $dpg-teal
+            color: $dpg-orange
     &__tag
         display: inline-block
         padding: .2rem .8rem
@@ -1389,21 +1386,25 @@ $dpg-strip-speed: 40s
             align-items: center
             gap: .9rem
             padding: .7rem 0
-            border-top: 1px solid $dpg-line
+            border-top: 1px solid $dpg-blue
             font-size: 1rem
             line-height: 1.4
-            color: $dpg-teal-dark
+            color: $dpg-blue
             &:hover
                 color: $dpg-teal
         .dpg-btn-sm
             display: inline-block !important
             padding: 0.55rem 1.4rem !important
-            border: 1px solid #073C44 !important
+            border: 1px solid $dpg-blue
             border-radius: 0.4rem !important
-            background: #073C44 !important
-            color: #FFFFFF !important
+            background: $dpg-blue
+            color: #FFFFFF 
             font-size: 0.95rem !important
             transition: 0.2s !important
+            &:hover
+                background: $dpg-orange !important
+                color: #FFFFFF !important
+                border: 1px solid $dpg-orange
 
         img
             flex: 0 0 64px
@@ -1413,8 +1414,12 @@ $dpg-strip-speed: 40s
             border-radius: .6rem
 
 .dpg-legacy
-    background: linear-gradient(135deg, #062F36, $dpg-teal-dark)
+    background: linear-gradient(135deg, #00346d 0%, #0A4B52 60%, #117569 150%) !important
     color: rgba($dpg-white, .85)
+    .btn-dpg
+        &:hover
+            background: $dpg-orange !important
+            color: #fff !important
     &__grid
         display: grid
         grid-template-columns: 1fr 1fr
